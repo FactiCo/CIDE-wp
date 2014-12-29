@@ -28,6 +28,7 @@ namespace CIDE_CotiApp
         /// </summary>
         public App()
         {
+
             // Global handler for uncaught exceptions. 
             UnhandledException += Application_UnhandledException;
 
