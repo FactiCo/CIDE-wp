@@ -25,9 +25,19 @@ namespace CIDE_CotiApp
             objEndpoint = new ConnectAPI();
         }
 
-        private void btnGuardar_Click(object sender, RoutedEventArgs e)
+        private async void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
-            objEndpoint.
+            objExpediente = new Expediente();
+            objExpediente.nombre = txtNombre.Text;
+            objExpediente.correo= txtCorreo.Text;
+            objExpediente.categoria = txtCategoria.Text;
+            objExpediente.explicacion= txtExplicacion.Text;
+            objExpediente.entidad= txtEntidad.Text;
+            objExpediente.edad = lstEdad.SelectedValue.ToString();
+            objExpediente.genero = lstEdad.SelectedValue.ToString();
+            objExpediente.escolaridad = lstEdad.SelectedValue.ToString();
+
+            await objEndpoint.postExpediente(objExpediente);
         }
     }
 }
