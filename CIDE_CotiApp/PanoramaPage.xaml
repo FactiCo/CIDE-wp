@@ -10,27 +10,82 @@
     mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
-    Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
-    shell:SystemTray.IsVisible="False">
+    shell:SystemTray.IsVisible="False"  Background="White" Foreground="Black" FontWeight="Bold">
+	
 
     <!--LayoutRoot contiene la cuadrícula raíz donde se coloca el resto del contenido de la página-->
-    <Grid x:Name="LayoutRoot">
-        <controls:Panorama Title="Tutorial">
+    <Grid x:Name="LayoutRoot" Background="#B0D9BD" >
+        <controls:Panorama Title=""  >
+            <controls:Panorama.TitleTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <Image x:Name="HeaderImage" Source="SplashScreenImage.jpg" MaxHeight="200" MaxWidth="800" Stretch="Fill" />
+                    </StackPanel>
+                </DataTemplate>
+            </controls:Panorama.TitleTemplate>
 
             <!--Elemento Panorama uno-->
-            <controls:PanoramaItem Header="elemento1">
-            
-                <Grid/>
+            <controls:PanoramaItem Header="Envia Testimonio" >
+
+                <ScrollContentPresenter>
+                    <Grid x:Name="imgLayout">
+
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto">
+                            </RowDefinition>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="0">
+                            <Image HorizontalAlignment="Left" Width="100" Height="100" />
+                            <TextBlock  Text="Categoria A"></TextBlock>
+                        </StackPanel>
+                        <StackPanel Grid.Row="1">
+                            <Image HorizontalAlignment="Left" Width="100" Height="100" />
+                            <TextBlock  Text="Categoria B"></TextBlock>
+                        </StackPanel>
+                        <StackPanel Grid.Row="2">
+                            <Image HorizontalAlignment="Left" Width="100" Height="100" />
+                            <TextBlock  Text="Categoria C"></TextBlock>
+                        </StackPanel>
+                        <StackPanel Grid.Row="3">
+                            <Image HorizontalAlignment="Left" Width="100" Height="100" />
+                            <TextBlock  Text="Categoria D"></TextBlock>
+                        </StackPanel>
+                        <StackPanel Grid.Row="4" >
+                            <Image HorizontalAlignment="Left" Width="100" Height="100" />
+                            <TextBlock  Text="Categoria E"></TextBlock>
+                        </StackPanel>
+                        <StackPanel Grid.Row="5">
+                            <Image HorizontalAlignment="Left" Width="100" Height="100" />
+                            <TextBlock  Text="Categoria F"></TextBlock>
+                        </StackPanel>
+                    </Grid>
+
+
+                </ScrollContentPresenter>
+            </controls:PanoramaItem>
+
+
+            <controls:PanoramaItem Header="Mapa" FontWeight="Bold">
+
+                <Grid>
+                    <phone:WebBrowser Source="http://www.justiciacotidiana.mx/" />
+                </Grid>
             </controls:PanoramaItem>
 
             <!--Elemento Panorama dos-->
-            <controls:PanoramaItem Header="elemento2">
+            <controls:PanoramaItem Header="Propuestas">
                 <Grid/>
             </controls:PanoramaItem>
-            
+
             <!--Elemento Panorama tres-->
-            <controls:PanoramaItem Header="elemento3">
+            <controls:PanoramaItem Header="¿Que es Justicia Cotidiana?" Foreground="Aqua" FontFamily="Microsoft PhagsPa" FontWeight="Bold">
                 <Grid/>
             </controls:PanoramaItem>
         </controls:Panorama>
