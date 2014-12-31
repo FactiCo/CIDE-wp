@@ -77,8 +77,6 @@
                         <ListBoxItem >Más de 70 años</ListBoxItem>
                     </ListBox>
 
-
-
                     <TextBlock Grid.Row="12" HorizontalAlignment="Left"  Name="blckGenero" Text="Genero" VerticalAlignment="Top" Foreground="Black" FontWeight="Normal" FontFamily="Verdana" FontSize="24" />
 
                 <ListBox Grid.Row="13" HorizontalAlignment="Left" Name="lstGenero" VerticalAlignment="Top" Width="422">
@@ -87,10 +85,6 @@
                     <ListBoxItem Name="NA" >Sin Especificar</ListBoxItem>
                 </ListBox>
 
-
-                   
-                    
-                    
                     <TextBlock Grid.Row="14" HorizontalAlignment="Left"  Name="blckEscolaridad" Text="Escolaridad" VerticalAlignment="Top" Foreground="White" FontWeight="Normal" FontFamily="Verdana" FontSize="24" />
                     <ListBox Grid.Row="15" HorizontalAlignment="Left" Name="lstEscolaridad" VerticalAlignment="Top" Width="422">
                         <ListBoxItem >Sin estudios</ListBoxItem>

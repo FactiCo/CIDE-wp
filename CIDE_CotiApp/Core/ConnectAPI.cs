@@ -1,13 +1,8 @@
 ﻿using System;
-
 using System.Net;
 using System.Net.Http;
-
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json.Utilities;
-using Newtonsoft.Json.Serialization;
-
+using Newtonsoft.Json.Converters;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,7 +24,7 @@ namespace CIDE_CotiApp.Core
         public async System.Threading.Tasks.Task getExpedientes()
         {
             string rawJSON;
-            rawJSON = await objHTTP.GetStringAsync(new Uri("www.factico.com.mx/CIDE/APIBeta/expediente.php?q=getList"));
+            rawJSON = await objHTTP.GetStringAsync(new Uri("http://www.factico.com.mx/CIDE/APIBeta/expediente.php?q=getList"));
 
             List<Expediente> lstExpedientes = JsonConvert.DeserializeObject<List<Expediente>>(rawJSON);
 
@@ -37,7 +32,6 @@ namespace CIDE_CotiApp.Core
 
         public async System.Threading.Tasks.Task postExpediente(Expediente objExpSource)
         {
-            string rawJSON;
             var content = new FormUrlEncodedContent(new[] 
             {
                 new KeyValuePair<string, string>("nombre", objExpSource.nombre),
@@ -52,10 +46,12 @@ namespace CIDE_CotiApp.Core
             });
 
 
-            var result = objHTTP.PostAsync(new Uri("www.factico.com.mx/CIDE/APIBeta/expediente.php?q=add"),content).Result;
-            rawJSON = result.Content.ReadAsStringAsync().Result;
+            var result = await objHTTP.PostAsync(new Uri("http://www.factico.com.mx/CIDE/APIBeta/expediente.php?q=add"), content);
+            var rawJSON = result.Content.ReadAsStringAsync().ToString();
+            
+            var respExp =JsonConvert.DeserializeObject<responseJSON>(rawJSON);
 
-            var respExp = JsonConvert.DeserializeObject<responseJSON>(rawJSON);
+            
             
         }
 

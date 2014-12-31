@@ -11,6 +11,5 @@ namespace CIDE_CotiApp.Core
         { }
 
         public string response { get; set; }
-        public string id { get; set; }
     }
 }
