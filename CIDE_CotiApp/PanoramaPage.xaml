@@ -11,24 +11,28 @@
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
-    shell:SystemTray.IsVisible="False"  Background="White" Foreground="Black" FontWeight="Bold">
+    shell:SystemTray.IsVisible="False"  Foreground="Black" FontWeight="Bold" >
 	
 
     <!--LayoutRoot contiene la cuadrícula raíz donde se coloca el resto del contenido de la página-->
-    <Grid x:Name="LayoutRoot" Background="#B0D9BD" >
-        <controls:Panorama Title=""  >
-            <controls:Panorama.TitleTemplate>
-                <DataTemplate>
-                    <StackPanel>
-                        <Image x:Name="HeaderImage" Source="SplashScreenImage.jpg" MaxHeight="200" MaxWidth="800" Stretch="Fill" />
-                    </StackPanel>
-                </DataTemplate>
-            </controls:Panorama.TitleTemplate>
+    <Grid x:Name="LayoutRoot">        
+        
+        <controls:Panorama Foreground="#368576" Background="#B0D9BD" >
+            
+                <controls:Panorama.Title>
+
+                <Grid>
+                    <Image   x:Name="HeaderImage" Source="CIDEJC.jpg" Width="160" Margin="150,85,0,0" />  
+                </Grid>
+
+            </controls:Panorama.Title>
+
+
 
             <!--Elemento Panorama uno-->
             <controls:PanoramaItem Header="Envia Testimonio" >
 
-                <ScrollContentPresenter>
+                <ScrollViewer>
                     <Grid x:Name="imgLayout">
 
 
@@ -41,13 +45,24 @@
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
-                        <StackPanel Grid.Row="0">
-                            <Image HorizontalAlignment="Left" Width="100" Height="100" />
-                            <TextBlock  Text="Categoria A"></TextBlock>
+
+
+                        <StackPanel Grid.Row="0" >
+
+                            <HyperlinkButton x:Name="lnkCat1" Click="lnkCat1_Click" Content="Hacia CatA"></HyperlinkButton>
+                            <Grid >
+                                
+                                <Image HorizontalAlignment="Left" Width="100" Height="100" Source="https://api.tiles.mapbox.com/v4/examples.map-zr0njcqy/pin-l-park+482(-73.975,40.767)/-73.975,40.767,17/500x300.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IlhHVkZmaW8ifQ.hAMX5hSW-QnTeRCMAy9A8Q" />
+                                
+                                <TextBlock  HorizontalAlignment="Stretch" Text="Categoria A" ></TextBlock>
+                                
+                            </Grid>
+
+
                         </StackPanel>
                         <StackPanel Grid.Row="1">
-                            <Image HorizontalAlignment="Left" Width="100" Height="100" />
-                            <TextBlock  Text="Categoria B"></TextBlock>
+                            <Image HorizontalAlignment="Left" Width="100" Source="https://api.tiles.mapbox.com/v4/examples.map-zr0njcqy/pin-l-park+482(-73.975,40.767)/-73.975,40.767,17/500x300.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IlhHVkZmaW8ifQ.hAMX5hSW-QnTeRCMAy9A8Q" />
+                            <TextBlock  Text="Categoria B" ></TextBlock>
                         </StackPanel>
                         <StackPanel Grid.Row="2">
                             <Image HorizontalAlignment="Left" Width="100" Height="100" />
@@ -65,10 +80,10 @@
                             <Image HorizontalAlignment="Left" Width="100" Height="100" />
                             <TextBlock  Text="Categoria F"></TextBlock>
                         </StackPanel>
+
                     </Grid>
-
-
-                </ScrollContentPresenter>
+                </ScrollViewer>
+                
             </controls:PanoramaItem>
 
 

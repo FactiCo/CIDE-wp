@@ -19,5 +19,16 @@ namespace CIDE_CotiApp
         {
             InitializeComponent();
         }
+
+        private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void lnkCat1_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/ClasTestimonio.xaml",UriKind.Relative));
+
+        }
     }
 }
