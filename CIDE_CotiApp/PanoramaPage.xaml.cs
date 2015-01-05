@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
+using Microsoft.Phone.Shell;
 
 namespace CIDE_CotiApp
 {
@@ -18,7 +19,12 @@ namespace CIDE_CotiApp
         public PanoramaPage()
         {
             InitializeComponent();
+            
+            
         }
+
+        ShellTileData tileimg;
+
 
         private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
         {
@@ -28,6 +34,25 @@ namespace CIDE_CotiApp
         private void lnkCat1_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("/ClasTestimonio.xaml",UriKind.Relative));
+
+        }
+
+        
+        
+
+        private void ApplicationBarIconButton_Click(object sender, EventArgs e)
+        {
+            this.popup.IsOpen = true;
+        }
+
+        private void HubTile_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+
+        }
+
+        private void tileJTrabajo_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/ClasTestimonio.xaml", UriKind.Relative));
 
         }
     }

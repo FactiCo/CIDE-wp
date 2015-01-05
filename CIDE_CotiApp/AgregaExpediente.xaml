@@ -60,10 +60,46 @@
                 <TextBlock Grid.Row="6" HorizontalAlignment="Left"  Name="blckExplicacion" Text="Explicacion" VerticalAlignment="Top" Foreground="Black" FontWeight="Normal" FontFamily="Verdana" FontSize="24" />
                 <TextBox Grid.Row="7" HorizontalAlignment="Left" Name="txtExplicacion" Text="" VerticalAlignment="Top" Width="422" />
                 <TextBlock Grid.Row="8" HorizontalAlignment="Left"  Name="blckEntidad" Text="Entidad" VerticalAlignment="Top" Foreground="Black" FontWeight="Normal" FontFamily="Verdana" FontSize="24" />
-                <TextBox Grid.Row="9" HorizontalAlignment="Left" Name="txtEntidad" Text="" VerticalAlignment="Top" Width="422" />
-                <TextBlock Grid.Row="10" HorizontalAlignment="Left"  Name="blckEdad" Text="Edad" VerticalAlignment="Top" Foreground="Black" FontWeight="Normal" FontFamily="Verdana" FontSize="24" />
+
+                    <ListBox Grid.Row="9" HorizontalAlignment="Left" Name="lstEntidad" VerticalAlignment="Top" Width="422" >
+                        <ListBoxItem  x:Uid="0">Todo México</ListBoxItem>
+                        <ListBoxItem  x:Uid="1">Aguascalientes</ListBoxItem>
+                        <ListBoxItem  x:Uid="2">Baja California</ListBoxItem>
+                        <ListBoxItem  x:Uid="3">Baja California Sur</ListBoxItem>
+                        <ListBoxItem  x:Uid="4">Campeche</ListBoxItem>
+                        <ListBoxItem  x:Uid="5">Coahuila de Zaragoza</ListBoxItem>
+                        <ListBoxItem  x:Uid="6">Colima</ListBoxItem>
+                        <ListBoxItem  x:Uid="7">Chiapas</ListBoxItem>
+                        <ListBoxItem  x:Uid="8">Chihuahua</ListBoxItem>
+                        <ListBoxItem  x:Uid="9">Distrito Federal</ListBoxItem>
+                        <ListBoxItem  x:Uid="10">Durango</ListBoxItem>
+                        <ListBoxItem  x:Uid="11">Guanajuato</ListBoxItem>
+                        <ListBoxItem  x:Uid="12">Guerrero</ListBoxItem>
+                        <ListBoxItem  x:Uid="13">Hidalgo</ListBoxItem>
+                        <ListBoxItem  x:Uid="14">Jalisco</ListBoxItem>
+                        <ListBoxItem  x:Uid="15">México</ListBoxItem>
+                        <ListBoxItem  x:Uid="16">Michoacán de Ocampo</ListBoxItem>
+                        <ListBoxItem  x:Uid="17">Morelos</ListBoxItem>
+                        <ListBoxItem  x:Uid="18">Nayarit</ListBoxItem>
+                        <ListBoxItem  x:Uid="19">Nuevo León</ListBoxItem>
+                        <ListBoxItem  x:Uid="20">Oaxaca</ListBoxItem>
+                        <ListBoxItem  x:Uid="21">Puebla</ListBoxItem>
+                        <ListBoxItem  x:Uid="22">Querétaro</ListBoxItem>
+                        <ListBoxItem  x:Uid="23">Quintana Roo</ListBoxItem>
+                        <ListBoxItem  x:Uid="24">San Luis Potosí</ListBoxItem>
+                        <ListBoxItem  x:Uid="25">Sinaloa</ListBoxItem>
+                        <ListBoxItem  x:Uid="26">Sonora</ListBoxItem>
+                        <ListBoxItem  x:Uid="27">Tabasco</ListBoxItem>
+                        <ListBoxItem  x:Uid="28">Tamaulipas</ListBoxItem>
+                        <ListBoxItem  x:Uid="29">Tlaxcala</ListBoxItem>
+                        <ListBoxItem  x:Uid="30">Veracruz de Ignacio de la Llave</ListBoxItem>
+                        <ListBoxItem  x:Uid="31">Yucatán</ListBoxItem>
+                        <ListBoxItem   x:Uid="32">Zacatecas</ListBoxItem>
+                    </ListBox>
+
+                    <TextBlock Grid.Row="10" HorizontalAlignment="Left"  Name="blckEdad" Text="Edad" VerticalAlignment="Top" Foreground="Black" FontWeight="Normal" FontFamily="Verdana" FontSize="24" />
                     <ListBox Grid.Row="11" HorizontalAlignment="Left" Name="lstEdad" VerticalAlignment="Top" Width="422" >
-                        <ListBoxItem >Menos de 18 años</ListBoxItem>
+                        <ListBoxItem  >Menos de 18 años</ListBoxItem>
                         <ListBoxItem >18 - 25 años</ListBoxItem>
                         <ListBoxItem >26 - 30 años</ListBoxItem>
                         <ListBoxItem >31 - 35 años</ListBoxItem>

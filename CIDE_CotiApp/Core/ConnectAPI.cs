@@ -15,18 +15,19 @@ namespace CIDE_CotiApp.Core
     {
         private HttpClient objHTTP;
         private HttpMessageHandler hndMsg;
+        public List<Expediente> lstExpedientes;
         public ConnectAPI()
         {
             objHTTP = new HttpClient();
 
         }
 
-        public async System.Threading.Tasks.Task getExpedientes()
+        public async System.Threading.Tasks.Task getExpedientes(List<Expediente> lstExp)
         {
-            string rawJSON;
-            rawJSON = await objHTTP.GetStringAsync(new Uri("http://www.factico.com.mx/CIDE/APIBeta/expediente.php?q=getList"));
+            var result =await  objHTTP.GetAsync(new Uri("http://www.factico.com.mx/CIDE/APIBeta/expediente.php?q=getList"));
+            var rawJSON=await result.Content.ReadAsStringAsync();
 
-            List<Expediente> lstExpedientes = JsonConvert.DeserializeObject<List<Expediente>>(rawJSON);
+            lstExp= JsonConvert.DeserializeObject<List<Expediente>>(rawJSON.ToString());
 
         }
 
@@ -34,17 +35,10 @@ namespace CIDE_CotiApp.Core
         {
             var content = new FormUrlEncodedContent(new[] 
             {
-                new KeyValuePair<string, string>("nombre", objExpSource.nombre),
-                new KeyValuePair<string, string>("correo", objExpSource.correo),
-                new KeyValuePair<string, string>("categoria", objExpSource.categoria),
-                new KeyValuePair<string, string>("explicacion", objExpSource.explicacion),
-                new KeyValuePair<string, string>("entidad", objExpSource.entidad),
-                new KeyValuePair<string, string>("edad", objExpSource.edad),
-                new KeyValuePair<string, string>("genero", objExpSource.genero),
-                new KeyValuePair<string, string>("escolaridad", objExpSource.escolaridad)
+                new KeyValuePair<string, string>("name", objExpSource.name),
 
             });
-
+            
 
             var result = await objHTTP.PostAsync(new Uri("http://www.factico.com.mx/CIDE/APIBeta/expediente.php?q=add"), content);
             var rawJSON = result.Content.ReadAsStringAsync().ToString();

@@ -16,5 +16,16 @@ namespace CIDE_CotiApp
         {
             InitializeComponent();
         }
+
+        private void lnkAddTestimonio_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/AgregaExpediente.xaml",UriKind.Relative));
+
+        }
+
+        private void lnkVerTestimonios_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Testimonios.xaml", UriKind.Relative));
+        }
     }
 }
