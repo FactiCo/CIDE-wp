@@ -31,7 +31,23 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+
+        <Popup x:Name="popup">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.Background>
+                    <ImageBrush ImageSource="/imgs/FONDO_QUE_ES_JC2.png">
+                    </ImageBrush>
+                </Grid.Background>
+                <phone:WebBrowser Grid.Row="0" Source="http://www.carloscastellanos.com.mx/mapas/mexico.html" />
+            </Grid>
+        </Popup>
+        
     </Application.Resources>
+
 
     <Application.ApplicationLifetimeObjects>
         <!--Objeto requerido que controla los eventos de duración de la aplicación-->

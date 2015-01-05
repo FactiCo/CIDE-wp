@@ -15,7 +15,7 @@
 
     <ScrollViewer>
     <!--LayoutRoot es la cuadrícula raíz donde se coloca todo el contenido de la página-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid x:Name="LayoutRoot" Background="#D3EFDA">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>

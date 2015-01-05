@@ -7,6 +7,8 @@ using System.Threading;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
@@ -14,7 +16,7 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using CIDE_CotiApp.Core.Modelo;
 using CIDE_CotiApp.Core;
-
+using Newtonsoft.Json;
 namespace CIDE_CotiApp
 {
     public partial class ListaExpedientes : PhoneApplicationPage
@@ -28,13 +30,21 @@ namespace CIDE_CotiApp
 
         private async void loadExp(ListBox listaSource)
         {
-            Core.ConnectAPI objAPI = new ConnectAPI();
-            //ProgressBar pbrExpedientes = new ProgressBar();
-            //ProgressIndicator progressIndicator = new ProgressIndicator() { IsIndeterminate = true, Text = "Obteniendo expedientes …" };
 
-            //SystemTray.SetProgressIndicator(this, progressIndicator);
+            HttpClient httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-             //await objAPI.getExpedientes().RunSynchronously();
+            
+
+            var response = await httpClient.GetAsync("http://www.justiciacotidiana.mx:8080/justiciacotidiana/api/v1/testimonios");
+
+            var responseString = await response.Content.ReadAsStringAsync();
+
+            var objResponse = JsonConvert.DeserializeObject(responseString, typeof(Expediente));
+
+            
+            
+
         }
 
     }

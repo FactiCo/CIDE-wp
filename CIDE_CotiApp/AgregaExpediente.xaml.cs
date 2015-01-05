@@ -43,6 +43,17 @@ namespace CIDE_CotiApp
             objExpediente.gender = (lstGenero.SelectedItem as ListBoxItem).Content.ToString();
             objExpediente.grade= (lstEscolaridad.SelectedItem as ListBoxItem).Content.ToString();
 
+            Testimonio objTestimonio = new Testimonio();
+            
+            objTestimonio.name = txtNombre.Text;
+            objTestimonio.email = txtCorreo.Text;
+            objTestimonio.category = txtCategoria.Text;
+            objTestimonio.explanation = txtExplicacion.Text;
+            objTestimonio.entidadFederativa = (lstEntidad.SelectedItem as ListBoxItem).Content.ToString();
+            objTestimonio.age = (lstEdad.SelectedItem as ListBoxItem).Content.ToString();
+            objTestimonio.gender = (lstGenero.SelectedItem as ListBoxItem).Content.ToString();
+            objTestimonio.grade = (lstEscolaridad.SelectedItem as ListBoxItem).Content.ToString();
+
 
             //await objEndpoint.postExpediente(objExpediente);
             /*
@@ -52,9 +63,29 @@ namespace CIDE_CotiApp
             var responseString = await response.Content.ReadAsStringAsync();
             var serializer = new JsonSerializer();
             var values = serializer.Deserialize<List<responseJSON>>(new JsonTextReader(new StringReader(responseString)));*/
-            Expediente objExpSource = objExpediente;
+            
+            var sets = new JsonSerializerSettings();
+            sets.ContractResolver = new interfaceExpediente(ExpedienteReveiceType.PostNG);
+            
 
-            HttpContent content= new StringContent(JsonConvert.SerializeObject(objExpSource,Formatting.Indented));
+            Book book = new Book
+ {
+     BookName = "The Gathering Storm",
+     BookPrice = 16.19m,
+     AuthorName = "Brandon Sanderson",
+     AuthorAge = 34,
+     AuthorCountry = "United States of America"
+ };
+
+            string startingWithA = JsonConvert.SerializeObject(objTestimonio, Formatting.Indented,
+    new JsonSerializerSettings { ContractResolver = new DynamicContractResolver('g') });
+
+string startingWithB = JsonConvert.SerializeObject(book, Formatting.Indented,
+    new JsonSerializerSettings { ContractResolver = new DynamicContractResolver('n') });
+
+            //string strJSON = JsonConvert.SerializeObject(objExpediente, Formatting.Indented, setts);
+    string strJSON = JsonConvert.SerializeObject(objTestimonio, Formatting.None);
+            HttpContent content= new StringContent(strJSON);
             /*var content = new FormUrlEncodedContent(new[] 
             {
                 new KeyValuePair<string, string>("nombre", objExpSource.nombre),
@@ -73,10 +104,15 @@ namespace CIDE_CotiApp
             HttpClient httpClient = new HttpClient();
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
+            content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
             var response = await httpClient.PostAsync("http://www.justiciacotidiana.mx:8080/justiciacotidiana/api/v1/testimonios", content);
 
             var responseString = await response.Content.ReadAsStringAsync();
             var serializer = new JsonSerializer();
+
+            
+
             var values = serializer.Deserialize(new StringReader(responseString),typeof(responseJSON));
         }
 

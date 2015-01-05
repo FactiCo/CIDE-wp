@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -23,24 +24,18 @@ namespace CIDE_CotiApp
         public Testimonios()
         {
             InitializeComponent();
-            
+            loadTestimonios(this.lstTestimonios);
         }
 
-
-        private async void btnListar_Click(object sender, RoutedEventArgs e)
+        private async void loadTestimonios(ListBox listaSource)
         {
-            var httpClient = new HttpClient();
-            var content = await httpClient.GetStringAsync("http://www.factico.com.mx/CIDE/APIBeta/expediente.php?q=getList");
-            
-            //lstTestimonios.ItemsSource = JsonConvert.DeserializeObject<List<Expediente>>("["+content+"]"); 
+            HttpClient httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            //List<string> videogames = JsonConvert.DeserializeObject<List<string>>(content);
-
-            JsonSerializer serializer = new JsonSerializer();
-            var values = serializer.Deserialize(new StringReader(content),typeof(List<Expediente>));
-
-            List<Expediente> items = JsonConvert.DeserializeObject<List<Expediente>>(content); 
-
+            var response = await httpClient.GetAsync("http://www.justiciacotidiana.mx:8080/justiciacotidiana/api/v1/testimonios");
+            var responseString = await response.Content.ReadAsStringAsync();
+            lst_Expedientes objRespExpedientes = JsonConvert.DeserializeObject<lst_Expedientes>(responseString);
+            listaSource.ItemsSource = objRespExpedientes.items.ToList();
         }
 
     }

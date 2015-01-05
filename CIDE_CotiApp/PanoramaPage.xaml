@@ -38,21 +38,15 @@
         </toolkit:NavigationOutTransition>
     </toolkit:TransitionService.NavigationOutTransition>
 
+
+
+    
     <!--LayoutRoot contiene la cuadrícula raíz donde se coloca el resto del contenido de la página-->
     <Grid x:Name="LayoutRoot">
         <Grid.Background>
             <ImageBrush ImageSource="/imgs/FONDO_QUE_ES_JC1.png"></ImageBrush>
         </Grid.Background>
         
-        <Popup x:Name="popup">
-            <Grid>
-                <Grid.Background>
-                    <ImageBrush ImageSource="/imgs/FONDO_QUE_ES_JC2.png">                        
-                    </ImageBrush>
-                </Grid.Background>
-                <phone:WebBrowser Source="http://www.carloscastellanos.com.mx/mapas/mexico.html" />
-            </Grid>
-        </Popup>
 
         <controls:Panorama Foreground="#368576"  >
 
@@ -61,9 +55,7 @@
                     <Image x:Name="HeaderImage" Source="/imgs/LOGOJC_QUE_ES_JC.png" Width="160" Margin="150,85,0,0" />
                 </Grid>
             </controls:Panorama.Title>
-
-            <controls:PanoramaItem >
-
+            <controls:PanoramaItem>
                 <controls:PanoramaItem.Header>
                     <StackPanel>
                         <TextBlock Foreground="#565656" Text="¿Que es Justicia Cotidiana?" TextWrapping="Wrap"/>
@@ -95,12 +87,15 @@
                 <Grid x:Name="imgLayout">
                     <!-- set its ItemContainerStyle which is the style for each ListBoxItem -->
                     <ListBox ItemContainerStyle="{StaticResource TileListBoxItemStyle}">
-                        <!-- set its ItemsPanel to be a WrapPanel -->
+                        
                         <ListBox.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <toolkit:WrapPanel />                                                                
                             </ItemsPanelTemplate>
                         </ListBox.ItemsPanel>
+
+                        <!-- set its ItemsPanel to be a WrapPanel 
+                        
                         <ListBoxItem>
                             <Grid>
                                 <TextBlock Text="Messages" />
@@ -109,19 +104,31 @@
                                     <TextBlock Text="12" Margin="4,0,0,8" />
                                 </StackPanel>
                             </Grid>
-                        </ListBoxItem>
+                        </ListBoxItem> -->
 
-                        <toolkit:HubTile Name="tileJTrabajo" Title="Justicia en el Trabajo" Message="Justicia en el trabajo" Notification="Nuevo testimonio" Source="/imgs/LOGOJC_QUE_ES_JC.jpg" Margin="12,12,0,0" Background="#58CA8F" Tap="tileJTrabajo_Tap" >
-                            
-                            </toolkit:HubTile>
-                        
-                        <toolkit:HubTile Title="2" Message="Msg1" Notification="new messages!2" Source="/imgs/LOGOJC_QUE_ES_JC.jpg" Margin="12,12,0,0" />
-                        <toolkit:HubTile Title="3" Message="Msg1" Notification="new messages!3" Source="/imgs/LOGOJC_QUE_ES_JC.jpg" Margin="12,12,0,0" />
+
+
+                        <toolkit:HubTile Name="tileJTrabajo" Title="Justicia en el Trabajo" Message="Justicia en el trabajo" Notification="Nuevo testimonio" Source="/imgs/ICONO_JUSTICIA_TRABAJO.png" Margin="12,12,0,0" Background="#58CA8F" Tap="tileJTrabajo_Tap" Foreground="#4A8293" >
+                        </toolkit:HubTile>
+
+                        <toolkit:HubTile Name="tileJFamilia" Title="Justicia en la Familia" Message="Justicia en la Familia" Notification="Nuevo testimonio" Source="/imgs/ICONO_JUSTICIA_FAMILIA.png" Margin="12,12,0,0" Background="#58CA8F" Tap="tileJFamilia_Tap" Foreground="#4A8293"></toolkit:HubTile>
+
+                        <toolkit:HubTile Name="tileJVecinal" Title="Justicia Vecinal" Message="Justicia Vecinal" Notification="Nuevo testimonio" Source="/imgs/ICONO_JUSTICIA_VECINAL.png" Margin="12,12,0,0" Background="#58CA8F" Tap="tileJVecinal_Tap" Foreground="#4A8293"></toolkit:HubTile>
+
+                        <toolkit:HubTile Name="tileJFuncionarios" Title="Justicia para Funcionarios" Message="Justicia para Funcionarios" Notification="Nuevo testimonio" Source="/imgs/ICONO_JUSTICIA_FUNCIONARIOS.png" Margin="12,12,0,0" Background="#58CA8F" Tap="tileJFuncionarios_Tap" Foreground="#4A8293">
+
+                        </toolkit:HubTile>
+                        <toolkit:HubTile Name="tileJEmprendedores" Title="Justicia para Emprendedores" Message="Justicia para Emprendedores" Notification="Nuevo testimonio" Source="/imgs/ICONO_JUSTICIA_EMPRENDEDORES.png" Margin="12,12,0,0" Background="#58CA8F" Tap="tileJEmprendedores_Tap" Foreground="#4A8293">
+
+                        </toolkit:HubTile>
+                        <toolkit:HubTile Name="tileMapa" Title="Mapa" Message="Mapa" Notification="Nuevo testimonio" Source="/imgs/LOGOJC_QUE_ES_JC.jpg" Margin="12,12,0,0" Background="White" Tap="tileMapa_Tap" Foreground="#4A8293" >
+
+                        </toolkit:HubTile>
                     </ListBox>
                 </Grid>                
             </controls:PanoramaItem>
 
-            <controls:PanoramaItem >
+            <controls:PanoramaItem>
                 <controls:PanoramaItem.Header>
                     <StackPanel>
                         <TextBlock Foreground="#565656" Text="Propuestas" TextWrapping="Wrap"/>
@@ -139,15 +146,23 @@
     <phone:PhoneApplicationPage.ApplicationBar >
         <shell:ApplicationBar>
 
-            <shell:ApplicationBarIconButton 
-                Click="ApplicationBarIconButton_Click" 
-            
-            IconUri="/Icons/show.png"
-            Text="show" />
 
+            <!--<shell:ApplicationBarMenuItem Click="mnuAcerca_Click" x:Name="mnuAcerca" Text="Acerca de"></shell:ApplicationBarMenuItem>-->
+
+            <shell:ApplicationBarIconButton 
+            x:Name="iconAcerca1"
+            Click="iconAcerca1_Click" 
+            IconUri="/imgs/LOGOJC_QUE_ES_JC.png"
+            Text="Acerca" />
+
+            <shell:ApplicationBarIconButton 
+                x:Name="iconAcerca2" Click="iconAcerca2_Click"
+            
+                IconUri="/imgs/LOGOJC_QUE_ES_JC.png"
+            Text="Acerca2" />
+            
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
-    
     
 </phone:PhoneApplicationPage>
 

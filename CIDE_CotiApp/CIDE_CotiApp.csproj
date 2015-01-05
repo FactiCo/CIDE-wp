@@ -106,6 +106,7 @@
     </Compile>
     <Compile Include="Core\ConnectAPI.cs" />
     <Compile Include="Core\Modelo\Expediente.cs" />
+    <Compile Include="Core\Modelo\interfaceExpediente.cs" />
     <Compile Include="Core\responseJSON.cs" />
     <Compile Include="ListaExpedientes.xaml.cs">
       <DependentUpon>ListaExpedientes.xaml</DependentUpon>
@@ -184,6 +185,11 @@
     <Content Include="imgs\FONDO_QUE_ES_JC2.png" />
     <Content Include="imgs\FONDO_QUE_ES_JC3.png" />
     <Content Include="imgs\FONDO_QUE_ES_JC4.png" />
+    <Content Include="imgs\ICONO_JUSTICIA_EMPRENDEDORES.png" />
+    <Content Include="imgs\ICONO_JUSTICIA_FAMILIA.png" />
+    <Content Include="imgs\ICONO_JUSTICIA_FUNCIONARIOS.png" />
+    <Content Include="imgs\ICONO_JUSTICIA_TRABAJO.png" />
+    <Content Include="imgs\ICONO_JUSTICIA_VECINAL.png" />
     <Content Include="imgs\LOGOJC_QUE_ES_JC.png" />
     <Content Include="imgs\LOGOJC_SPLASH.png" />
     <Content Include="imgs\LOGO_MAIN_MENU.png" />
