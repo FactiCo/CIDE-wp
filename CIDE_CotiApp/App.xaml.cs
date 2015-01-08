@@ -28,7 +28,7 @@ namespace CIDE_CotiApp
         /// </summary>
         public App()
         {
-            RootFrame = new Microsoft.Phone.Controls.TransitionFrame();
+            //RootFrame = new Microsoft.Phone.Controls.TransitionFrame();
 
             // Global handler for uncaught exceptions. 
             UnhandledException += Application_UnhandledException;
@@ -118,7 +118,10 @@ namespace CIDE_CotiApp
 
             // Crear el marco pero no establecerlo como RootVisual todavía; esto permite que
             // la pantalla de presentación permanezca activa hasta que la aplicación esté lista para la presentación.
-            RootFrame = new PhoneApplicationFrame();
+
+            RootFrame = new TransitionFrame();
+
+            //RootFrame = new PhoneApplicationFrame();
             RootFrame.Navigated += CompleteInitializePhoneApplication;
 
             // Controlar errores de navegación

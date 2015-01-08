@@ -14,52 +14,59 @@
     shell:SystemTray.IsVisible="True">
 
     <ScrollViewer>
-    <!--LayoutRoot es la cuadrícula raíz donde se coloca todo el contenido de la página-->
+        <!--LayoutRoot es la cuadrícula raíz donde se coloca todo el contenido de la página-->
         <Grid x:Name="LayoutRoot" Background="#D3EFDA">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
 
-        <!--TitlePanel contiene el nombre de la aplicación y el título de la página-->
-        <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="Justicia Cotidiana" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="Agregar Testimonio" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
-        </StackPanel>
+            <Grid.RowDefinitions>
+                <RowDefinition  Height="100" ></RowDefinition>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-        <!--ContentPanel. Colocar aquí el contenido adicional-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,10">
+            <!--TitlePanel contiene el nombre de la aplicación y el título de la página-->
+            <StackPanel Grid.Row="0" HorizontalAlignment="Center" Width="480"  >
+                <StackPanel.Background>
+                    <ImageBrush ImageSource="/imgs/FONDO_QUE_ES_JC1.png"></ImageBrush>
+                </StackPanel.Background>
+
+                <TextBlock Text="Formulario" Style="{StaticResource PhoneTextNormalStyle}" HorizontalAlignment="Center" >
+
+                </TextBlock>
+
+            </StackPanel>
+
+            <!--ContentPanel. Colocar aquí el contenido adicional-->
+            <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,10">
                 <Grid x:Name="Controls" Margin="12,0,12,10">
-                
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="70" ></RowDefinition>
-                    <RowDefinition Height="70" ></RowDefinition>
-                    <RowDefinition Height="70"></RowDefinition>
-                    <RowDefinition Height="70"></RowDefinition>
-                    <RowDefinition Height="70"></RowDefinition>
-                    <RowDefinition Height="70"></RowDefinition>
-                    <RowDefinition Height="70" ></RowDefinition>
-                    <RowDefinition Height="70" ></RowDefinition>
-                    <RowDefinition Height="70"></RowDefinition>
-                    <RowDefinition Height="140"></RowDefinition>
-                    <RowDefinition Height="70"></RowDefinition>
-                    <RowDefinition Height="140"></RowDefinition>
-                    <RowDefinition Height="70" ></RowDefinition>
-                    <RowDefinition Height="100" ></RowDefinition>
-                    <RowDefinition Height="70" ></RowDefinition>
-                    <RowDefinition Height="140" ></RowDefinition>
-                    <RowDefinition Height="70" ></RowDefinition>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60"  ></RowDefinition>
+                        <RowDefinition Height="70" ></RowDefinition>
+                        <RowDefinition Height="60"></RowDefinition>
+                        <RowDefinition Height="70"></RowDefinition>
+                        <RowDefinition Height="60"></RowDefinition>
+                        <RowDefinition Height="70"></RowDefinition>
+                        <RowDefinition Height="60" ></RowDefinition>
+                        <RowDefinition Height="70" ></RowDefinition>
+                        <RowDefinition Height="60"></RowDefinition>
+                        <RowDefinition Height="140"></RowDefinition>
+                        <RowDefinition Height="70"></RowDefinition>
+                        <RowDefinition Height="140"></RowDefinition>
+                        <RowDefinition Height="70" ></RowDefinition>
+                        <RowDefinition Height="100" ></RowDefinition>
+                        <RowDefinition Height="70" ></RowDefinition>
+                        <RowDefinition Height="140" ></RowDefinition>
+                        <RowDefinition Height="70" ></RowDefinition>
                     </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0" HorizontalAlignment="Left"  Name="blckNombre" Text="Nombre" VerticalAlignment="Top" Foreground="Black" FontWeight="Normal" FontFamily="Verdana" FontSize="24" />
-                <TextBox Grid.Row="1" HorizontalAlignment="Left" Name="txtNombre" Text="" VerticalAlignment="Top" Width="422" />
-                <TextBlock Grid.Row="2" HorizontalAlignment="Left"  Name="blckCorreo" Text="Correo" VerticalAlignment="Top" Foreground="Black" FontWeight="Normal" FontFamily="Verdana" FontSize="24" />
-                <TextBox Grid.Row="3" HorizontalAlignment="Left" Name="txtCorreo" Text="" VerticalAlignment="Top" Width="422" />
-                <TextBlock Grid.Row="4" HorizontalAlignment="Left"  Name="blckCategoria" Text="Categoria" VerticalAlignment="Top" Foreground="Black" FontWeight="Normal" FontFamily="Verdana" FontSize="24" />
-                <TextBox Grid.Row="5" HorizontalAlignment="Left" Name="txtCategoria" Text="" VerticalAlignment="Top" Width="422" />
-                <TextBlock Grid.Row="6" HorizontalAlignment="Left"  Name="blckExplicacion" Text="Explicacion" VerticalAlignment="Top" Foreground="Black" FontWeight="Normal" FontFamily="Verdana" FontSize="24" />
-                <TextBox Grid.Row="7" HorizontalAlignment="Left" Name="txtExplicacion" Text="" VerticalAlignment="Top" Width="422" />
-                <TextBlock Grid.Row="8" HorizontalAlignment="Left"  Name="blckEntidad" Text="Entidad" VerticalAlignment="Top" Foreground="Black" FontWeight="Normal" FontFamily="Verdana" FontSize="24" />
+                    <TextBlock Grid.Row="0" HorizontalAlignment="Left"  Name="blckNombre" Text="Nombre" VerticalAlignment="Top" Foreground="Black" FontWeight="Normal" FontFamily="Verdana" FontSize="24" />
+                    <TextBox Grid.Row="1" HorizontalAlignment="Left" Name="txtNombre" Text="" VerticalAlignment="Top" Width="422" />
+                    <TextBlock Grid.Row="2" HorizontalAlignment="Left"  Name="blckCorreo" Text="Correo" VerticalAlignment="Top" Foreground="Black" FontWeight="Normal" FontFamily="Verdana" FontSize="24" />
+                    <TextBox Grid.Row="3" HorizontalAlignment="Left" Name="txtCorreo" Text="" VerticalAlignment="Top" Width="422" />
+                    <TextBlock Grid.Row="4" HorizontalAlignment="Left"  Name="blckCategoria" Text="Categoria" VerticalAlignment="Top" Foreground="Black" FontWeight="Normal" FontFamily="Verdana" FontSize="24" />
+                    <TextBox Grid.Row="5" HorizontalAlignment="Left" Name="txtCategoria" Text="" VerticalAlignment="Top" Width="422" />
+                    <TextBlock Grid.Row="6" HorizontalAlignment="Left"  Name="blckExplicacion" Text="Explicacion" VerticalAlignment="Top" Foreground="Black" FontWeight="Normal" FontFamily="Verdana" FontSize="24" />
+                    <TextBox Grid.Row="7" HorizontalAlignment="Left" Name="txtExplicacion" Text="" VerticalAlignment="Top" Width="422" />
+                    <TextBlock Grid.Row="8" HorizontalAlignment="Left"  Name="blckEntidad" Text="Entidad" VerticalAlignment="Top" Foreground="Black" FontWeight="Normal" FontFamily="Verdana" FontSize="24" />
 
                     <ListBox Grid.Row="9" HorizontalAlignment="Left" Name="lstEntidad" VerticalAlignment="Top" Width="422" >
                         <ListBoxItem  x:Uid="0">Todo México</ListBoxItem>
@@ -115,11 +122,11 @@
 
                     <TextBlock Grid.Row="12" HorizontalAlignment="Left"  Name="blckGenero" Text="Genero" VerticalAlignment="Top" Foreground="Black" FontWeight="Normal" FontFamily="Verdana" FontSize="24" />
 
-                <ListBox Grid.Row="13" HorizontalAlignment="Left" Name="lstGenero" VerticalAlignment="Top" Width="422">
-                    <ListBoxItem Name="Hombre" >Hombre</ListBoxItem>
-                    <ListBoxItem Name="Mujer" >Mujer</ListBoxItem>
-                    <ListBoxItem Name="NA" >Sin Especificar</ListBoxItem>
-                </ListBox>
+                    <ListBox Grid.Row="13" HorizontalAlignment="Left" Name="lstGenero" VerticalAlignment="Top" Width="422">
+                        <ListBoxItem Name="Hombre" >Hombre</ListBoxItem>
+                        <ListBoxItem Name="Mujer" >Mujer</ListBoxItem>
+                        <ListBoxItem Name="NA" >Sin Especificar</ListBoxItem>
+                    </ListBox>
 
                     <TextBlock Grid.Row="14" HorizontalAlignment="Left"  Name="blckEscolaridad" Text="Escolaridad" VerticalAlignment="Top" Foreground="White" FontWeight="Normal" FontFamily="Verdana" FontSize="24" />
                     <ListBox Grid.Row="15" HorizontalAlignment="Left" Name="lstEscolaridad" VerticalAlignment="Top" Width="422">
@@ -134,10 +141,10 @@
                     </ListBox>
                     <Button Grid.Row="16" Width="200" x:Name="btnGuardar" Click="btnGuardar_Click" >Guardar</Button>
 
-              </Grid>
+                </Grid>
 
 
+            </Grid>
         </Grid>
-    </Grid>
     </ScrollViewer>
 </phone:PhoneApplicationPage>

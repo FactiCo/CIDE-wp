@@ -8,44 +8,9 @@
 
     <!--Recursos de la aplicación-->
     <Application.Resources>
-        <Style x:Key="TileListBoxItemStyle" TargetType="ListBoxItem">
-            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-            <Setter Property="VerticalContentAlignment" Value="Stretch"/>
-            <Setter Property="Padding" Value="0"/>
-            <Setter Property="FontSize" Value="64"/>
-            <Setter Property="Margin" Value="12,12,0,0"/>
-            <!--<Setter Property="Background" Value="{StaticResource PhoneAccentBrush}"/>-->
-            <Setter Property="Background" Value="#58CA8F"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="Width" Value="173"/>
-            <Setter Property="Height" Value="173"/>
-            <Setter Property="HorizontalAlignment" Value="Left"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="ListBoxItem">
-                        <Grid>
-                            <Rectangle  Fill= "{TemplateBinding Background}"/>
-                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                        </Grid>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
+        <Style x:Key="TituloEncabezado_JC" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#565656"/>
         </Style>
-
-
-        <Popup x:Name="popup">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"></RowDefinition>
-                </Grid.RowDefinitions>
-                <Grid.Background>
-                    <ImageBrush ImageSource="/imgs/FONDO_QUE_ES_JC2.png">
-                    </ImageBrush>
-                </Grid.Background>
-                <phone:WebBrowser Grid.Row="0" Source="http://www.carloscastellanos.com.mx/mapas/mexico.html" />
-            </Grid>
-        </Popup>
-        
     </Application.Resources>
 
 

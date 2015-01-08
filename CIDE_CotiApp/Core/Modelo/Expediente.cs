@@ -16,7 +16,7 @@ namespace CIDE_CotiApp.Core.Modelo
         public string email { get; set; }
         public string category { get; set; }
         public string explanation { get; set; }
-        public string entidadFederativa { get; set; }
+        public string state { get; set; }
         public string gender { get; set; }
         public string age { get; set; }
         public string grade { get; set; }
@@ -65,7 +65,7 @@ namespace CIDE_CotiApp.Core.Modelo
         public string email { get; set; }
         public string category { get; set; }
         public string explanation { get; set; }
-        public string entidadFederativa { get; set; }
+        public string state { get; set; }
         public string gender { get; set; }
         public string age { get; set; }
         public string grade { get; set; }

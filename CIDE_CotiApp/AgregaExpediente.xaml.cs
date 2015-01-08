@@ -33,23 +33,18 @@ namespace CIDE_CotiApp
 
         private async void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
-            objExpediente = new Expediente();
-            objExpediente.name = txtNombre.Text;
-            objExpediente.email= txtCorreo.Text;
-            objExpediente.category= txtCategoria.Text;
-            objExpediente.explanation= txtExplicacion.Text;
-            objExpediente.entidadFederativa = (lstEntidad.SelectedItem as ListBoxItem).Content.ToString();
-            objExpediente.age = (lstEdad.SelectedItem as ListBoxItem).Content.ToString();
-            objExpediente.gender = (lstGenero.SelectedItem as ListBoxItem).Content.ToString();
-            objExpediente.grade= (lstEscolaridad.SelectedItem as ListBoxItem).Content.ToString();
+     
 
             Testimonio objTestimonio = new Testimonio();
             
             objTestimonio.name = txtNombre.Text;
             objTestimonio.email = txtCorreo.Text;
-            objTestimonio.category = txtCategoria.Text;
+            //objTestimonio.category = txtCategoria.Text;
+
+            objTestimonio.category = "Justicia en las familias";
             objTestimonio.explanation = txtExplicacion.Text;
-            objTestimonio.entidadFederativa = (lstEntidad.SelectedItem as ListBoxItem).Content.ToString();
+            //objTestimonio.state = lstEntidad.SelectedIndex.ToString();
+            objTestimonio.state = "6";
             objTestimonio.age = (lstEdad.SelectedItem as ListBoxItem).Content.ToString();
             objTestimonio.gender = (lstGenero.SelectedItem as ListBoxItem).Content.ToString();
             objTestimonio.grade = (lstEscolaridad.SelectedItem as ListBoxItem).Content.ToString();

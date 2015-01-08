@@ -16,8 +16,7 @@
     <!--LayoutRoot es la cuadrícula raíz donde se coloca todo el contenido de la página-->
     <Grid x:Name="LayoutRoot"  >
         <Grid.RowDefinitions>
-            <RowDefinition Height="200">
-
+            <RowDefinition Height="150">
             </RowDefinition>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
@@ -41,9 +40,9 @@
                     <DataTemplate>
                         <StackPanel >
                             <TextBlock FontSize="{StaticResource PhoneFontSizeExtraLarge}" Text="{Binding name}" Foreground="#666666" />
-                            <Image HorizontalAlignment="Left" Width="100" Source="https://api.tiles.mapbox.com/v4/examples.map-zr0njcqy/pin-l-park+482(-73.975,40.767)/-73.975,40.767,17/500x300.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IlhHVkZmaW8ifQ.hAMX5hSW-QnTeRCMAy9A8Q" />
-                            <TextBlock Text="{Binding email}" Foreground="#666666" />
-                            <TextBlock Text="{Binding entidadFederativa}" Foreground="#666666" />
+                            <TextBlock Text="{Binding explanation}" Foreground="#666666" TextWrapping="Wrap" />
+                            <TextBlock Text="{Binding email}" Foreground="#666666"  TextWrapping="Wrap"/>
+                            <TextBlock Text="{Binding state}" Foreground="#666666"  TextWrapping="Wrap" />
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>

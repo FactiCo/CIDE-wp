@@ -10,34 +10,59 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
-    shell:SystemTray.IsVisible="True" Foreground="#B0D9BD">
+    shell:SystemTray.IsVisible="False" Foreground="#B0D9BD">
+    
+    
 
     <!--LayoutRoot es la cuadrícula raíz donde se coloca todo el contenido de la página-->
-    <Grid x:Name="LayoutRoot"  Background="#368576">
+    <Grid x:Name="LayoutRoot" >
+        <Grid.Background>
+            <ImageBrush ImageSource="/imgs/FONDO_QUE_ES_JC1.png">
+                
+            </ImageBrush>
+        </Grid.Background>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="250"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <!--TitlePanel contiene el nombre de la aplicación y el título de la página-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28" >
-            <TextBlock Text="Justicia Cotidiana" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="Justicia Laboral" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
-
-
+            <TextBlock x:Name="txtJusticia" Text="Justicia Laboral" FontSize="30" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" TextWrapping="Wrap" HorizontalAlignment="Center" />
+            <Image x:Name="imgJusticia" VerticalAlignment="Top" HorizontalAlignment="Center" Width="100" Height="100" Margin="0,20,10,20"></Image>
         </StackPanel>
 
         <!--ContentPanel. Colocar aquí el contenido adicional-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <StackPanel Margin="0,20,10,20">
-                <HyperlinkButton x:Name="lnkAddTestimonio" Click="lnkAddTestimonio_Click" Content="Agrega Testimonio" ></HyperlinkButton>
-            </StackPanel>
-            <StackPanel Margin="10,50,20,500">
-                <HyperlinkButton x:Name="lnkVerTestimonios" Click="lnkVerTestimonios_Click" Content="Ver Testimonios" ></HyperlinkButton>
-            </StackPanel>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" >
+                    
+                </RowDefinition>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="100"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Style="{StaticResource TituloEncabezado_JC}" Name="txtExplicacion" Text="Justicia" TextWrapping="Wrap" Margin="15,0,15,0" >
+                
+            </TextBlock>
             
+                <Button Grid.Row="1" Name="btnIngresa" Click="btnIngresa_Click" Background="#6CDA84" Width="350" Height="80" Content="Ingresar mi testimonio" Foreground="White"></Button>
             
+            <ListBox Margin="20" x:Name="lstExp" Grid.Row="2" >
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Path=name}" />
+                            <TextBlock Text="{Binding Path=email}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+            <Button Grid.Row="3" Name="btnVer" Click="btnVer_Click" Background="#6CDA84" Width="350" Height="80" Content="Ver Testimonios" Foreground="White"></Button>
+
         </Grid>
     </Grid>
 
 </phone:PhoneApplicationPage>
+    

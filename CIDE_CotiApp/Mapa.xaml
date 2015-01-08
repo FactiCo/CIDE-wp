@@ -1,0 +1,25 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="CIDE_CotiApp.Mapa"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*">
+                
+            </RowDefinition>
+        </Grid.RowDefinitions>
+        <phone:WebBrowser Grid.Row="0" IsScriptEnabled="True" Name="webBrowser1" Height="800" Width="480" Source="http://www.carloscastellanos.com.mx/mapas/mexico.html" IsEnabled="True"   />
+    </Grid>
+    
+    <!-- <phone:WebBrowser   Name="webBrowser1" Height="475" Width="441" Source="http://bl.ocks.org/mbostock/raw/d4021aa4dccfd65edffd/" />  -->
+</phone:PhoneApplicationPage>

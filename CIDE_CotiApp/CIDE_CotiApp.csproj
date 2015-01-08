@@ -114,6 +114,9 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Mapa.xaml.cs">
+      <DependentUpon>Mapa.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PanoramaPage.xaml.cs">
       <DependentUpon>PanoramaPage.xaml</DependentUpon>
     </Compile>
@@ -146,6 +149,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Mapa.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -190,6 +197,9 @@
     <Content Include="imgs\ICONO_JUSTICIA_FUNCIONARIOS.png" />
     <Content Include="imgs\ICONO_JUSTICIA_TRABAJO.png" />
     <Content Include="imgs\ICONO_JUSTICIA_VECINAL.png" />
+    <Content Include="imgs\justicia-ciudadana-postal01.jpg" />
+    <Content Include="imgs\Justicia-Ciudadana-postal02.jpg" />
+    <Content Include="imgs\justicia-ciudadana-postal03.jpg" />
     <Content Include="imgs\LOGOJC_QUE_ES_JC.png" />
     <Content Include="imgs\LOGOJC_SPLASH.png" />
     <Content Include="imgs\LOGO_MAIN_MENU.png" />

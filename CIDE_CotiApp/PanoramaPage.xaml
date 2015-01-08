@@ -14,81 +14,167 @@
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
-    shell:SystemTray.IsVisible="False"  Foreground="Black" FontWeight="Bold" >
+    shell:SystemTray.IsVisible="False"  Foreground="White" FontWeight="Bold" Background="White" >
 
-
-    <toolkit:TransitionService.NavigationInTransition>
-        <toolkit:NavigationInTransition>
-            <toolkit:NavigationInTransition.Backward>
-                <toolkit:RotateTransition />
-            </toolkit:NavigationInTransition.Backward>
-            <toolkit:NavigationInTransition.Forward>
-                <toolkit:RotateTransition />
-            </toolkit:NavigationInTransition.Forward>
-        </toolkit:NavigationInTransition>
-    </toolkit:TransitionService.NavigationInTransition>
-    <toolkit:TransitionService.NavigationOutTransition>
-        <toolkit:NavigationOutTransition>
-            <toolkit:NavigationOutTransition.Backward>
-                <toolkit:RotateTransition />
-            </toolkit:NavigationOutTransition.Backward>
-            <toolkit:NavigationOutTransition.Forward>
-                <toolkit:RotateTransition />
-            </toolkit:NavigationOutTransition.Forward>
-        </toolkit:NavigationOutTransition>
-    </toolkit:TransitionService.NavigationOutTransition>
-
-
-
-    
     <!--LayoutRoot contiene la cuadrícula raíz donde se coloca el resto del contenido de la página-->
     <Grid x:Name="LayoutRoot">
-        <Grid.Background>
-            <ImageBrush ImageSource="/imgs/FONDO_QUE_ES_JC1.png"></ImageBrush>
-        </Grid.Background>
+
+        <!--LayoutRoot es la cuadrícula raíz donde se coloca todo el contenido de la página-->
         
+            
+        
+        
+        
+        <Grid.RowDefinitions>
+            <RowDefinition>
+                
+            </RowDefinition>
+        </Grid.RowDefinitions>
+        <controls:Panorama Foreground="#368576" >
+            <controls:Panorama.Background>
+                <ImageBrush ImageSource="/imgs/FONDO_QUE_ES_JC1.png">
+                    
+                </ImageBrush>
+            </controls:Panorama.Background>
+            
+            <controls:PanoramaItem >
 
-        <controls:Panorama Foreground="#368576"  >
+                <ScrollViewer VerticalScrollBarVisibility="Visible">
+                    <ListBox Height="800">
+                        <ListBoxItem>
+                            <Image Source="/imgs/justicia-ciudadana-postal01.jpg"></Image>
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            <Image Source="/imgs/Justicia-Ciudadana-postal02.jpg"></Image>
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            <Image Source="/imgs/justicia-ciudadana-postal03.jpg"></Image>
+                        </ListBoxItem>
+                    </ListBox>
+                </ScrollViewer>
+                
+                
+                <controls:PanoramaItem.Background>
+                        <ImageBrush ImageSource="/imgs/FONDO_QUE_ES_JC1.png"></ImageBrush>
+                </controls:PanoramaItem.Background>
+                <!--
+                <controls:Pivot Name="pivotGral" SelectionChanged="pivotGral_SelectionChanged"  toolkit:TurnstileFeatherEffect.FeatheringIndex="0" >
+                    <controls:PivotItem Name="pivotQue" Tap="pivotQue_Tap" >
+                        <controls:PivotItem.Header>
+                            <Grid >
+                                <Grid.RowDefinitions >
+                                    <RowDefinition Height="100"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Row="0" HorizontalAlignment="Center" Style="{StaticResource TituloEncabezado_JC}" Text="¿QUÉ" FontSize="45" ></TextBlock>
+                                
+                            </Grid>
+                        </controls:PivotItem.Header>
 
-            <controls:Panorama.Title>
-                <Grid>
-                    <Image x:Name="HeaderImage" Source="/imgs/LOGOJC_QUE_ES_JC.png" Width="160" Margin="150,85,0,0" />
-                </Grid>
-            </controls:Panorama.Title>
-            <controls:PanoramaItem>
-                <controls:PanoramaItem.Header>
-                    <StackPanel>
-                        <TextBlock Foreground="#565656" Text="¿Que es Justicia Cotidiana?" TextWrapping="Wrap"/>
-                    </StackPanel>
-                </controls:PanoramaItem.Header>
+                        <TextBlock 
+                            
+Text="La Justicia Cotidiana es el primer contacto entre 
+ciudadanía y el Estado para resolver problemas y abusos 
+ que se cometen todos los días. 
+ Una justicia para todos y todas, todos los días y en 
+ todo lugar, ayudará a reconstruir la confianza y
+ certidumbre en el país. "
+                            TextWrapping="Wrap"></TextBlock>
+                        </controls:PivotItem>
+                        
+                    <controls:PivotItem Name="pivotEs" Tap="pivotEs_Tap">
+                        <controls:PivotItem.Header>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="100"></RowDefinition>
+                                    <RowDefinition Height="100"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Row="0" Style="{StaticResource TituloEncabezado_JC}" Text="ES LA" TextWrapping="Wrap" FontSize="45"></TextBlock>
+                                
+                            </Grid>    
+                        </controls:PivotItem.Header>
+                        <Grid>
+                            <Grid.Background>
+                                <ImageBrush ImageSource="/imgs/FONDO_QUE_ES_JC3.png"></ImageBrush>
+                            </Grid.Background>
 
-                <TextBlock TextWrapping="Wrap" Foreground="#F2F2F2" Margin="10,0,10,0" >
-                        La Justicia Cotidiana es el primer
-                        contacto entre ciudadaníay el
-                        Estado para resolver problemas y
-                        abusos que se cometen todos los
-                        días. Una justicia para todos y
-                        todas, todos los días y en todo
-                        lugar, ayudará a reconstruir la
-                        confianza y certidumbre en el país.
-                </TextBlock>
+                            <TextBlock  
+                            
+Text="La Justicia Cotidiana es el primer contacto entre 
+ciudadanía y el Estado para resolver problemas y abusos 
+ que se cometen todos los días. 
+ Una justicia para todos y todas, todos los días y en 
+ todo lugar, ayudará a reconstruir la confianza y
+ certidumbre en el país. "
+                            TextWrapping="Wrap"></TextBlock>
+                        </Grid>
+                        
+                    </controls:PivotItem>
+                        
+                    <controls:PivotItem  Name="pivotJusticia" Tap="pivotJusticia_Tap" >
+                        <controls:PivotItem.Header>
+                            <TextBlock Style="{StaticResource TituloEncabezado_JC}" Text="JUSTICIA" FontSize="45"></TextBlock>
+                        </controls:PivotItem.Header>
+                        <Grid>
+                            <Grid.Background>
+                                <ImageBrush ImageSource="/imgs/FONDO_QUE_ES_JC3.png" ></ImageBrush>
+                            </Grid.Background>
 
+                            <TextBlock 
+                            
+Text="La Justicia Cotidiana es el primer contacto entre 
+ciudadanía y el Estado para resolver problemas y abusos 
+ que se cometen todos los días. 
+ Una justicia para todos y todas, todos los días y en 
+ todo lugar, ayudará a reconstruir la confianza y
+ certidumbre en el país. "
+                            TextWrapping="Wrap" ></TextBlock>
+                        </Grid>
+    
+
+                    </controls:PivotItem>
+
+
+                    <controls:PivotItem  Name="pivotCotidiana" Tap="pivotCotidiana_Tap"  >
+
+
+                        <controls:PivotItem.Header>
+                            <TextBlock Style="{StaticResource TituloEncabezado_JC}" Text="COTIDIANA?" FontSize="45"></TextBlock>
+                        </controls:PivotItem.Header>
+
+
+                        <TextBlock 
+                            
+Text="La Justicia Cotidiana es el primer contacto entre 
+ciudadanía y el Estado para resolver problemas y abusos 
+ que se cometen todos los días. 
+ Una justicia para todos y todas, todos los días y en 
+ todo lugar, ayudará a reconstruir la confianza y
+ certidumbre en el país. "
+                            TextWrapping="Wrap"></TextBlock>
+
+                    </controls:PivotItem>
+                    </controls:Pivot>
+
+-->
+                
             </controls:PanoramaItem>
-
+            
+            
             <controls:PanoramaItem>
-
-                <controls:PanoramaItem.Header>
-                    <StackPanel>
-                        <TextBlock Foreground="#565656" Text="Ingresa tu testimonio" TextWrapping="Wrap"/>
-
-                    </StackPanel>
+                <controls:PanoramaItem.Header >
+                    
+                        <TextBlock Foreground="White" Text="Ingresa tu testimonio" TextWrapping="Wrap" FontSize="30"/>
                 </controls:PanoramaItem.Header>
                 
                 <Grid x:Name="imgLayout">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="100"></RowDefinition>
+                    </Grid.RowDefinitions>
                     <!-- set its ItemContainerStyle which is the style for each ListBoxItem -->
-                    <ListBox ItemContainerStyle="{StaticResource TileListBoxItemStyle}">
-                        
-                        <ListBox.ItemsPanel>
+                    <ListBox Grid.Row="0">
+
+                        <ListBox.ItemsPanel >
                             <ItemsPanelTemplate>
                                 <toolkit:WrapPanel />                                                                
                             </ItemsPanelTemplate>
@@ -108,41 +194,83 @@
 
 
 
-                        <toolkit:HubTile Name="tileJTrabajo" Title="Justicia en el Trabajo" Message="Justicia en el trabajo" Notification="Nuevo testimonio" Source="/imgs/ICONO_JUSTICIA_TRABAJO.png" Margin="12,12,0,0" Background="#58CA8F" Tap="tileJTrabajo_Tap" Foreground="#4A8293" >
+                        <toolkit:HubTile Name="tileJTrabajo"   Title="Trabajo" Message="Justicia en el trabajo" Notification="Nuevo testimonio agregado"  Margin="12,12,0,0" Tap="tileJTrabajo_Tap" Source="/imgs/ICONO_JUSTICIA_TRABAJO.png" Foreground="White" >
+                            <toolkit:HubTile.Background>
+                                <ImageBrush ></ImageBrush>
+                            </toolkit:HubTile.Background>
                         </toolkit:HubTile>
 
-                        <toolkit:HubTile Name="tileJFamilia" Title="Justicia en la Familia" Message="Justicia en la Familia" Notification="Nuevo testimonio" Source="/imgs/ICONO_JUSTICIA_FAMILIA.png" Margin="12,12,0,0" Background="#58CA8F" Tap="tileJFamilia_Tap" Foreground="#4A8293"></toolkit:HubTile>
-
-                        <toolkit:HubTile Name="tileJVecinal" Title="Justicia Vecinal" Message="Justicia Vecinal" Notification="Nuevo testimonio" Source="/imgs/ICONO_JUSTICIA_VECINAL.png" Margin="12,12,0,0" Background="#58CA8F" Tap="tileJVecinal_Tap" Foreground="#4A8293"></toolkit:HubTile>
-
-                        <toolkit:HubTile Name="tileJFuncionarios" Title="Justicia para Funcionarios" Message="Justicia para Funcionarios" Notification="Nuevo testimonio" Source="/imgs/ICONO_JUSTICIA_FUNCIONARIOS.png" Margin="12,12,0,0" Background="#58CA8F" Tap="tileJFuncionarios_Tap" Foreground="#4A8293">
-
+                        <toolkit:HubTile Name="tileJFamilia" Title="Familia" Message="Justicia en la Familia" Notification="" Source="/imgs/ICONO_JUSTICIA_FAMILIA.png" Margin="12,12,0,0"  Tap="tileJFamilia_Tap" Foreground="White">
+                            <toolkit:HubTile.Background>
+                                <ImageBrush ></ImageBrush>
+                            </toolkit:HubTile.Background>
                         </toolkit:HubTile>
-                        <toolkit:HubTile Name="tileJEmprendedores" Title="Justicia para Emprendedores" Message="Justicia para Emprendedores" Notification="Nuevo testimonio" Source="/imgs/ICONO_JUSTICIA_EMPRENDEDORES.png" Margin="12,12,0,0" Background="#58CA8F" Tap="tileJEmprendedores_Tap" Foreground="#4A8293">
 
+                        <toolkit:HubTile Name="tileJVecinal" Title="Vecinal" Message="Justicia Vecinal" Notification="Nuevo testimonio" Source="/imgs/ICONO_JUSTICIA_VECINAL.png" Margin="12,12,0,0" Tap="tileJVecinal_Tap" Foreground="White">
+                            <toolkit:HubTile.Background>
+                                <ImageBrush ></ImageBrush>
+                            </toolkit:HubTile.Background>
                         </toolkit:HubTile>
-                        <toolkit:HubTile Name="tileMapa" Title="Mapa" Message="Mapa" Notification="Nuevo testimonio" Source="/imgs/LOGOJC_QUE_ES_JC.jpg" Margin="12,12,0,0" Background="White" Tap="tileMapa_Tap" Foreground="#4A8293" >
+
+                        <toolkit:HubTile Name="tileJFuncionarios" Title="Funcionarios" Message="Justicia para Funcionarios" Notification="Nuevo testimonio funcionarios" Source="/imgs/ICONO_JUSTICIA_FUNCIONARIOS.png" Margin="12,12,0,0"  Tap="tileJFuncionarios_Tap" Foreground="White">
+
+                            <toolkit:HubTile.Background>
+                                <ImageBrush ></ImageBrush>
+                            </toolkit:HubTile.Background>
+                            
+                        </toolkit:HubTile>
+                        <toolkit:HubTile Name="tileJEmprendedores" Title="Emprendedores" Message="Justicia para Emprendedores" Notification="" Source="/imgs/ICONO_JUSTICIA_EMPRENDEDORES.png" Margin="12,12,0,0" Tap="tileJEmprendedores_Tap" Foreground="White">
+
+                            <toolkit:HubTile.Background>
+                                <ImageBrush ></ImageBrush>
+                            </toolkit:HubTile.Background>
 
                         </toolkit:HubTile>
                     </ListBox>
+                    
+                    <Button Grid.Row="1"  Name="btnMapa" Click="btnMapa_Click" Width="300" Height="70" Content="Mapa de Testimonios"></Button>
                 </Grid>                
             </controls:PanoramaItem>
 
             <controls:PanoramaItem>
+                <controls:PanoramaItem.Background>
+                    <ImageBrush ImageSource="/imgs/FONDO_QUE_ES_JC1.png" ></ImageBrush>
+                </controls:PanoramaItem.Background>
+                
                 <controls:PanoramaItem.Header>
+
+
                     <StackPanel>
                         <TextBlock Foreground="#565656" Text="Propuestas" TextWrapping="Wrap"/>
                     </StackPanel>
                 </controls:PanoramaItem.Header>
 
-                <toolkit:RotateTransition ></toolkit:RotateTransition>
-                
             </controls:PanoramaItem>
             
             
         </controls:Panorama>
     </Grid>
 
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
     <phone:PhoneApplicationPage.ApplicationBar >
         <shell:ApplicationBar>
 
@@ -156,7 +284,7 @@
             Text="Acerca" />
 
             <shell:ApplicationBarIconButton 
-                x:Name="iconAcerca2" Click="iconAcerca2_Click"
+                x:Name="iconAcerca2" Click="iconAcerca2_Click" 
             
                 IconUri="/imgs/LOGOJC_QUE_ES_JC.png"
             Text="Acerca2" />
