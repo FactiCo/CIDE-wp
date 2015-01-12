@@ -38,6 +38,8 @@ namespace CIDE_CotiApp
             }
         }
 
+        private string currCategory;
+
         private async void loadTestimonios(ListBox listaSource)
         {
             HttpClient httpClient = new HttpClient();
@@ -48,7 +50,7 @@ namespace CIDE_CotiApp
             lst_Expedientes objRespExpedientes = JsonConvert.DeserializeObject<lst_Expedientes>(responseString);
             if (objRespExpedientes.count > 0)
             {
-                listaSource.ItemsSource = objRespExpedientes.items.ToList();
+                listaSource.ItemsSource = objRespExpedientes.items.Where(p => p.category==currCategory).ToList();
             }
             else
             {
@@ -63,26 +65,31 @@ namespace CIDE_CotiApp
             switch(tipo)
             {
                 case "trabajo":
+                    currCategory = "Justicia en el trabajo";
                     txtJusticia.Text = "Justicia en el Trabajo";
                     imgJusticia.Source = new BitmapImage(new Uri(@"/imgs/ICONO_JUSTICIA_TRABAJO.png", UriKind.Relative));
                     txtExplicacion.Text = "La Justicia Laboral es un tema pendiente en México. Actualmente, los procesos para obtener justicia en el trabajo son caros, complejos y las figuras de justicia alternativa se utilizan poco. ";
                     break;
                 case "familia":
+                    currCategory="Justicia en las familias";
                     txtJusticia.Text = "Justicia en las Familias";
                     imgJusticia.Source = new BitmapImage(new Uri(@"/imgs/ICONO_JUSTICIA_FAMILIA.png", UriKind.Relative));
                     txtExplicacion.Text = "Justicia en las Familias trata diversos temas y conflictos como el divorcio, sucesiones, pensiones alimenticias, entre otros. Es un tema complejo, pues intervienen relaciones de poder y vínculos afectivos. Las mujeres suelen ser las personas más desfavorecidas.  ";
                     break;
                 case "vecinal":
+                    currCategory="Justicia vecinal y comunitaria";
                     txtJusticia.Text = "Justicia Vecinal y Comunitaria";
                     imgJusticia.Source = new BitmapImage(new Uri(@"/imgs/ICONO_JUSTICIA_VECINAL.png", UriKind.Relative));
                     txtExplicacion.Text = "La convivencia vecinal y comunitaria es probablemente el mayor tema de conflictos diarios entre personas que habitan un mismo espacio o territorio. Conflictos derivados de los espacios públicos y uso de suelo se tratarán en este apartado. ";
                     break;
                 case "funcionarios":
+                    currCategory = "Justicia para funcionarios";
                     txtJusticia.Text = "Justicia para Funcionarios";
                     imgJusticia.Source = new BitmapImage(new Uri(@"/imgs/ICONO_JUSTICIA_FUNCIONARIOS.png", UriKind.Relative));
                     txtExplicacion.Text = "Los ciudadanos tienen la facultad de defenderse frente a actos injustos de las autoridades. Sin embargo, en muchas ocasiones estos procesos resultan mucho más largos y complejos que la reparación del daño. La responsabilidad patrimonial del Estado es un tema fundamental.";
                     break;
                 case "emprendedores":
+                    currCategory="Justicia para emprendedores";
                     txtJusticia.Text = "Justicia para  Emprendedores (PyMes)s";
                     imgJusticia.Source = new BitmapImage(new Uri(@"/imgs/ICONO_JUSTICIA_EMPRENDEDORES.png",UriKind.Relative));
                     txtExplicacion.Text = "Emprender es un reto constante en términos legales. Los micro, pequeños y medianos empresarios se enfrentan a numerosos obstáculos y las alternativas de justicia son pocas.";

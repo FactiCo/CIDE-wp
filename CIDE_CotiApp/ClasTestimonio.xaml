@@ -45,11 +45,8 @@
                 <RowDefinition Height="100"></RowDefinition>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0" Background="White">
-                <TextBlock  Style="{StaticResource TituloEncabezado_JC}" Name="txtExplicacion" Text="Justicia" TextWrapping="Wrap" Margin="15,0,15,0" ></TextBlock>
+                <TextBlock  Style="{StaticResource TituloEncabezado_JC}" Name="txtExplicacion" Text="Justicia" TextWrapping="Wrap" Margin="15,10,15,0" ></TextBlock>
             </Grid>
-            
-                
-            
             
                 <Button Grid.Row="1" Name="btnIngresa" Click="btnIngresa_Click" Background="#6CDA84" Width="350" Height="80" Content="Ingresar mi testimonio" Foreground="White"></Button>
             
