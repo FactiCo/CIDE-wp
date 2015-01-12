@@ -48,9 +48,24 @@ namespace CIDE_CotiApp
             var response = await httpClient.GetAsync("http://www.justiciacotidiana.mx:8080/justiciacotidiana/api/v1/testimonios");
             var responseString = await response.Content.ReadAsStringAsync();
             lst_Expedientes objRespExpedientes = JsonConvert.DeserializeObject<lst_Expedientes>(responseString);
+            foreach (Expediente exp in objRespExpedientes.items)
+            {
+                
+                if (exp.gender=="Hombre")
+                {
+                    exp.gender = @"/imgs/ICONO_HOMBRE.png";
+                }
+                else
+                {
+                    exp.gender = @"/imgs/ICONO_MUJER.png";
+                }
+                
+            }
+            
             if (objRespExpedientes.count > 0)
             {
                 listaSource.ItemsSource = objRespExpedientes.items.Where(p => p.category==currCategory).ToList();
+
             }
             else
             {

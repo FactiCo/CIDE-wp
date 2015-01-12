@@ -53,10 +53,24 @@
             <ListBox Margin="20" x:Name="lstExp" Grid.Row="2" >
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding Path=name}" />
-                            <TextBlock Text="{Binding Path=email}" />
-                        </StackPanel>
+                        
+                            <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"  ></ColumnDefinition>
+                                <ColumnDefinition  Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50"></RowDefinition>
+                                <RowDefinition Height="100"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Path=name}"  />
+                            <Image Grid.Row="1" Name="imgGender" Grid.Column="0" Source="{Binding Path=gender}" >
+                                
+                            </Image>
+                            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Path=explanation}" />
+                        </Grid>
+                            
+                        
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>

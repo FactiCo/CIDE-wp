@@ -192,11 +192,13 @@
     <Content Include="imgs\FONDO_QUE_ES_JC2.png" />
     <Content Include="imgs\FONDO_QUE_ES_JC3.png" />
     <Content Include="imgs\FONDO_QUE_ES_JC4.png" />
+    <Content Include="imgs\ICONO_HOMBRE.png" />
     <Content Include="imgs\ICONO_JUSTICIA_EMPRENDEDORES.png" />
     <Content Include="imgs\ICONO_JUSTICIA_FAMILIA.png" />
     <Content Include="imgs\ICONO_JUSTICIA_FUNCIONARIOS.png" />
     <Content Include="imgs\ICONO_JUSTICIA_TRABAJO.png" />
     <Content Include="imgs\ICONO_JUSTICIA_VECINAL.png" />
+    <Content Include="imgs\ICONO_MUJER.png" />
     <Content Include="imgs\justicia-ciudadana-postal01.jpg" />
     <Content Include="imgs\Justicia-Ciudadana-postal02.jpg" />
     <Content Include="imgs\justicia-ciudadana-postal03.jpg" />
