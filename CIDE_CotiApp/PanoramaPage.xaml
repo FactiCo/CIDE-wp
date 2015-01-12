@@ -261,11 +261,19 @@ ciudadanía y el Estado para resolver problemas y abusos
 
                     <StackPanel>
                         <TextBlock Foreground="#565656" Text="Propuestas" TextWrapping="Wrap"/>
+                        
                     </StackPanel>
                 </controls:PanoramaItem.Header>
+                
+                <Grid>
+                    <TextBlock Text="Es necesario registrarse con facebook para poder ver la propuestas" TextWrapping="Wrap" Foreground="White"></TextBlock>
+                    <Button Name="btnFB" Click="btnFB_Click" Content="Facebook Login"  HorizontalAlignment="Center" Width="200" Height="150"></Button>
+                    <phone:WebBrowser x:Name="webBrowserFB" IsScriptEnabled="True" Navigated="webBrowserFB_Navigated" Loaded="webBrowserFB_Loaded" />
+
+                </Grid>
+                
 
             </controls:PanoramaItem>
-            
             
         </controls:Panorama>
     </Grid>
