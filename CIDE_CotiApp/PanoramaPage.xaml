@@ -28,17 +28,25 @@
         <Grid.RowDefinitions>
             <RowDefinition>
                 
+                
             </RowDefinition>
         </Grid.RowDefinitions>
         <controls:Panorama Foreground="#368576" >
             <controls:Panorama.Background>
+                
                 <ImageBrush ImageSource="/imgs/FONDO_QUE_ES_JC1.png">
                     
                 </ImageBrush>
             </controls:Panorama.Background>
             
             <controls:PanoramaItem >
+                <controls:PanoramaItem.Header>
+                    <TextBlock Text="¿Que es la justicia cotidiana?" Foreground="White" TextWrapping="Wrap" FontSize="50">
 
+                    </TextBlock>
+
+                </controls:PanoramaItem.Header>
+                
                 <ScrollViewer VerticalScrollBarVisibility="Visible">
                     <ListBox Height="800">
                         <ListBoxItem>
