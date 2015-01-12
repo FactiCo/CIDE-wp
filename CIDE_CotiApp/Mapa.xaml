@@ -18,7 +18,7 @@
                 
             </RowDefinition>
         </Grid.RowDefinitions>
-        <phone:WebBrowser Grid.Row="0" IsScriptEnabled="True" Name="webBrowser1" Height="800" Width="480" Source="http://www.carloscastellanos.com.mx/mapas/mexico.html" IsEnabled="True"   />
+        <phone:WebBrowser Grid.Row="0" IsScriptEnabled="True" Name="webBrowser1" Height="800" Width="480" Source="http://justiciacotidiana.mx/es/JusticiaCotidiana/mapatestimonios" IsEnabled="True"   />
     </Grid>
     
     <!-- <phone:WebBrowser   Name="webBrowser1" Height="475" Width="441" Source="http://bl.ocks.org/mbostock/raw/d4021aa4dccfd65edffd/" />  -->
