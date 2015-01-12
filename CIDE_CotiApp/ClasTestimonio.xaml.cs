@@ -64,7 +64,7 @@ namespace CIDE_CotiApp
             
             if (objRespExpedientes.count > 0)
             {
-                listaSource.ItemsSource = objRespExpedientes.items.Where(p => p.category==currCategory).ToList();
+                listaSource.ItemsSource = objRespExpedientes.items.Where(p => p.category==currCategory).OrderByDescending(p=>p.created).ToList();
 
             }
             else
@@ -121,7 +121,7 @@ namespace CIDE_CotiApp
 
         private void lnkVerTestimonios_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/Testimonios.xaml", UriKind.Relative));
+            
         }
 
         private void btnIngresa_Click(object sender, RoutedEventArgs e)
@@ -131,7 +131,7 @@ namespace CIDE_CotiApp
 
         private void btnVer_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new Uri("/Testimonios.xaml?tipo=" + currCategory, UriKind.Relative));
         }
     }
 }

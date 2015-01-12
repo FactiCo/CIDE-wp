@@ -45,11 +45,8 @@
                             <TextBlock Text="{Binding state}" Foreground="#666666"  TextWrapping="Wrap" />
                         </StackPanel>
                     </DataTemplate>
-                </ListBox.ItemTemplate>
-                
+                </ListBox.ItemTemplate>    
             </ListBox>
-
-
         </Grid>
     </Grid>
 
