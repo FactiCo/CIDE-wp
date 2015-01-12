@@ -23,7 +23,7 @@ namespace CIDE_CotiApp
         public PanoramaPage()
         {
             InitializeComponent();
-            
+            currIndexFlick = 0;
             
         }
 
@@ -109,11 +109,34 @@ namespace CIDE_CotiApp
 
         }
 
+        private int currIndexFlick;
         private void GestureListener_Flick(object sender, FlickGestureEventArgs e)
         {
-            Console.WriteLine("Swipe");
 
 
+            var uri1 = "/imgs/justicia-ciudadana-postal01.jpg";
+            var uri2 = "/imgs/Justicia-Ciudadana-postal02.jpg";
+            var uri3 = "/imgs/justicia-ciudadana-postal03.jpg";
+            
+            
+            string currURI = "";
+            switch (currIndexFlick)
+            {
+                case 0:
+                    currURI = uri2;
+                    currIndexFlick++;
+                    break;
+                case 1:
+                    currURI = uri3;
+                    currIndexFlick++;
+                    break;
+                case 2:
+                    currURI = uri1;
+                    currIndexFlick = 0;
+                    break;
+            }
+   
+            imgCurrent.Source = new BitmapImage(new Uri(currURI, UriKind.Relative));
 
         }
 
@@ -178,7 +201,7 @@ namespace CIDE_CotiApp
 
         void sb_Completed(object sender, EventArgs e)
         {
-
+            
             BitmapImage image = new BitmapImage(new Uri(@"/imgs/FONDO_QUE_ES_JC" + "1" + ".png", UriKind.Absolute));
 
             ImageBrush b = new ImageBrush();
@@ -223,6 +246,11 @@ namespace CIDE_CotiApp
 
             sb.Begin();
         }
+
+        private void lstScroll_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //lstScroll.ScrollIntoView(lstScroll.SelectedIndex);
+       } 
 
     }
 }

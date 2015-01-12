@@ -39,17 +39,28 @@
                 </ImageBrush>
             </controls:Panorama.Background>
             
-            <controls:PanoramaItem >
+            <controls:PanoramaItem Margin="0,0,0,0" Width="480">
                 <controls:PanoramaItem.Header>
                     <TextBlock Text="¿Que es la justicia cotidiana?" Foreground="White" TextWrapping="Wrap" FontSize="50">
 
                     </TextBlock>
 
                 </controls:PanoramaItem.Header>
+
+                <!--<ScrollViewer VerticalScrollBarVisibility="Visible"  >-->
+
+                <!--<ListBox Name="lstScroll" Height="800" SelectionChanged="lstScroll_SelectionChanged">-->
+
+                <toolkit:GestureService.GestureListener>
+                    <toolkit:GestureListener   Flick="GestureListener_Flick"/>
                 
-                <ScrollViewer VerticalScrollBarVisibility="Visible">
-                    <ListBox Height="800">
-                        <ListBoxItem>
+                </toolkit:GestureService.GestureListener>
+
+
+                <Image Width="480" Source="/imgs/justicia-ciudadana-postal01.jpg" Margin="0,0,0,0" Name="imgCurrent" ></Image>
+                    
+                    <!--
+                    <ListBoxItem>
                             <Image Source="/imgs/justicia-ciudadana-postal01.jpg"></Image>
                         </ListBoxItem>
                         <ListBoxItem>
@@ -58,8 +69,8 @@
                         <ListBoxItem>
                             <Image Source="/imgs/justicia-ciudadana-postal03.jpg"></Image>
                         </ListBoxItem>
-                    </ListBox>
-                </ScrollViewer>
+                    </ListBox>-->
+                <!--</ScrollViewer>-->
                 
                 
                 <controls:PanoramaItem.Background>
