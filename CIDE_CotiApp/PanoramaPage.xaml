@@ -15,15 +15,10 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="False"  Foreground="White" FontWeight="Bold" Background="White" >
-
+    
     <!--LayoutRoot contiene la cuadrícula raíz donde se coloca el resto del contenido de la página-->
     <Grid x:Name="LayoutRoot">
-
         <!--LayoutRoot es la cuadrícula raíz donde se coloca todo el contenido de la página-->
-        
-            
-        
-        
         
         <Grid.RowDefinitions>
             <RowDefinition>
@@ -32,50 +27,68 @@
             </RowDefinition>
         </Grid.RowDefinitions>
         <controls:Panorama Foreground="#368576" >
+
+            
+            
             <controls:Panorama.Background>
-                
-                <ImageBrush ImageSource="/imgs/FONDO_QUE_ES_JC1.png">
-                    
+
+                <ImageBrush ImageSource="/imgs/FONDO_PANORAMA.png">
+
                 </ImageBrush>
+            
             </controls:Panorama.Background>
             
-            <controls:PanoramaItem Margin="0,0,0,0" Width="480">
-                <controls:PanoramaItem.Header>
-                    <TextBlock Text="¿Que es la justicia cotidiana?" Foreground="White" TextWrapping="Wrap" FontSize="50">
-
-                    </TextBlock>
-
-                </controls:PanoramaItem.Header>
-
-                <!--<ScrollViewer VerticalScrollBarVisibility="Visible"  >-->
-
-                <!--<ListBox Name="lstScroll" Height="800" SelectionChanged="lstScroll_SelectionChanged">-->
-
-                <toolkit:GestureService.GestureListener>
-                    <toolkit:GestureListener   Flick="GestureListener_Flick"/>
+            <controls:PanoramaItem>
                 
-                </toolkit:GestureService.GestureListener>
-
-
-                <Image Width="480" Source="/imgs/justicia-ciudadana-postal01.jpg" Margin="0,0,0,0" Name="imgCurrent" ></Image>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="300"></RowDefinition>
+                        <RowDefinition Height="300"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0" Source="/imgs/LOGOBAR.png" Margin="10,0,0,10" ></Image>
                     
-                    <!--
-                    <ListBoxItem>
-                            <Image Source="/imgs/justicia-ciudadana-postal01.jpg"></Image>
-                        </ListBoxItem>
+                    <TextBlock FontSize="25" FontFamily="/res/Roboto_Slab/RobotoSlab-Regular.ttf#Roboto Slab" Grid.Row="1" Foreground="White"  TextWrapping="Wrap" Margin="10,0,100,10">
+                        Primera aplicación para recopilar 
+                        y visualizar testimonios y propuestas de 
+                        Justicia Cotidiana en México
+                    </TextBlock>
+                    
+                    <Image Grid.Row="2" Source="/imgs/ICONSBAR.png" Margin="10,0,0,10"></Image>
+                    
+                </Grid>
+                
+            </controls:PanoramaItem>
+            
+            <controls:PanoramaItem Margin="0,0,0,0" >
+                <controls:PanoramaItem.Header >
+                    
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition>        
+                            </RowDefinition>
+                        </Grid.RowDefinitions>
+                        
+                            <Image Grid.Row="0" Source="/imgs/NEW_LOGO.png" Width="100" Height="100" HorizontalAlignment="Center" Margin="170,10,10,0">
+                            </Image>
+                    </Grid>
+                    
+                </controls:PanoramaItem.Header>
+                
+                    
+                <ScrollViewer VerticalScrollBarVisibility="Visible">
+
+                <ListBox Name="lstScroll"  SelectionChanged="lstScroll_SelectionChanged" Height="700">
+                        
+                        <!--<Image Width="480" Source="/imgs/justicia-ciudadana-postal01.jpg" Margin="0,0,0,0" Name="imgCurrent" ></Image>-->
+
                         <ListBoxItem>
-                            <Image Source="/imgs/Justicia-Ciudadana-postal02.jpg"></Image>
+                            <Image Source="/imgs/SLIDE_NUEVO.png"></Image>
                         </ListBoxItem>
-                        <ListBoxItem>
-                            <Image Source="/imgs/justicia-ciudadana-postal03.jpg"></Image>
-                        </ListBoxItem>
-                    </ListBox>-->
-                <!--</ScrollViewer>-->
+                    </ListBox>
+                </ScrollViewer>
                 
                 
-                <controls:PanoramaItem.Background>
-                        <ImageBrush ImageSource="/imgs/FONDO_QUE_ES_JC1.png"></ImageBrush>
-                </controls:PanoramaItem.Background>
                 <!--
                 <controls:Pivot Name="pivotGral" SelectionChanged="pivotGral_SelectionChanged"  toolkit:TurnstileFeatherEffect.FeatheringIndex="0" >
                     <controls:PivotItem Name="pivotQue" Tap="pivotQue_Tap" >
@@ -177,12 +190,12 @@ ciudadanía y el Estado para resolver problemas y abusos
 -->
                 
             </controls:PanoramaItem>
-            
-            
+
+
             <controls:PanoramaItem>
                 <controls:PanoramaItem.Header >
-                    
-                        <TextBlock Foreground="White" Text="Ingresa tu testimonio" TextWrapping="Wrap" FontSize="30"/>
+
+                    <TextBlock Foreground="White" Text="Testimonios" TextWrapping="Wrap" FontSize="30" FontFamily="/res/Roboto_Slab/RobotoSlab-Regular.ttf#Roboto Slab"/>
                 </controls:PanoramaItem.Header>
                 
                 <Grid x:Name="imgLayout">
@@ -199,6 +212,8 @@ ciudadanía y el Estado para resolver problemas y abusos
                             </ItemsPanelTemplate>
                         </ListBox.ItemsPanel>
 
+                        
+                        
                         <!-- set its ItemsPanel to be a WrapPanel 
                         
                         <ListBoxItem>
@@ -211,68 +226,48 @@ ciudadanía y el Estado para resolver problemas y abusos
                             </Grid>
                         </ListBoxItem> -->
 
-
-
-                        <toolkit:HubTile Name="tileJTrabajo"   Title="Trabajo" Message="Justicia en el trabajo" Notification="Nuevo testimonio agregado"  Margin="12,12,0,0" Tap="tileJTrabajo_Tap" Source="/imgs/ICONO_JUSTICIA_TRABAJO.png" Foreground="White" >
-                            <toolkit:HubTile.Background>
-                                <ImageBrush ></ImageBrush>
-                            </toolkit:HubTile.Background>
+                        <toolkit:HubTile Name="tileJTrabajo"    Message="Justicia en el trabajo" Notification="Nuevo testimonio agregado"  Margin="10,10,0,0" Tap="tileJTrabajo_Tap" Source="/imgs/ICONO_JUSTICIA_TRABAJO.png" Foreground="#6CDA84" Background="White" FontFamily="/res/Source_Sans_Pro/SourceSansPro-Regular.ttf#Source Sans Pro" >
                         </toolkit:HubTile>
-
-                        <toolkit:HubTile Name="tileJFamilia" Title="Familia" Message="Justicia en la Familia" Notification="" Source="/imgs/ICONO_JUSTICIA_FAMILIA.png" Margin="12,12,0,0"  Tap="tileJFamilia_Tap" Foreground="White">
-                            <toolkit:HubTile.Background>
-                                <ImageBrush ></ImageBrush>
-                            </toolkit:HubTile.Background>
+                        <toolkit:HubTile Name="tileJFamilia" Message="Justicia para familias" Notification="" Source="/imgs/ICONO_JUSTICIA_FAMILIA.png" Margin="10,10,0,0"  Tap="tileJFamilia_Tap" Foreground="#6CDA84" Background="White" FontFamily="/res/Source_Sans_Pro/SourceSansPro-Regular.ttf#Source Sans Pro">
                         </toolkit:HubTile>
-
-                        <toolkit:HubTile Name="tileJVecinal" Title="Vecinal" Message="Justicia Vecinal" Notification="Nuevo testimonio" Source="/imgs/ICONO_JUSTICIA_VECINAL.png" Margin="12,12,0,0" Tap="tileJVecinal_Tap" Foreground="White">
-                            <toolkit:HubTile.Background>
-                                <ImageBrush ></ImageBrush>
-                            </toolkit:HubTile.Background>
+                        <toolkit:HubTile Name="tileJVecinal"  Message="Justicia vecinal y comunitaria" Notification="Nuevo testimonio" Source="/imgs/ICONO_JUSTICIA_VECINAL.png" Margin="12,12,0,0" Tap="tileJVecinal_Tap" Foreground="#6CDA84" Background="White">
                         </toolkit:HubTile>
-
-                        <toolkit:HubTile Name="tileJFuncionarios" Title="Funcionarios" Message="Justicia para Funcionarios" Notification="Nuevo testimonio funcionarios" Source="/imgs/ICONO_JUSTICIA_FUNCIONARIOS.png" Margin="12,12,0,0"  Tap="tileJFuncionarios_Tap" Foreground="White">
-
-                            <toolkit:HubTile.Background>
-                                <ImageBrush ></ImageBrush>
-                            </toolkit:HubTile.Background>
-                            
+                        <toolkit:HubTile Name="tileJCiudadanos" Message="Justicia para ciudadanos" Notification="Nuevo testimonio ciudadanos" Source="/imgs/ICONO_JUSTICIA_CIUDADANOS_TRANS.png" Margin="10,10,0,0"  Foreground="#6CDA84" Background="White"  FontFamily="/res/Source_Sans_Pro/SourceSansPro-Regular.ttf#Source Sans Pro" Tap="tileJCiudadanos_Tap">
                         </toolkit:HubTile>
-                        <toolkit:HubTile Name="tileJEmprendedores" Title="Emprendedores" Message="Justicia para Emprendedores" Notification="" Source="/imgs/ICONO_JUSTICIA_EMPRENDEDORES.png" Margin="12,12,0,0" Tap="tileJEmprendedores_Tap" Foreground="White">
-
-                            <toolkit:HubTile.Background>
-                                <ImageBrush ></ImageBrush>
-                            </toolkit:HubTile.Background>
-
+                        <toolkit:HubTile Name="tileJEmprendedores" Message="Justicia para emprendedores" Notification="" Source="/imgs/ICONO_JUSTICIA_EMPRENDEDORES.png" Margin="12,12,0,0" Tap="tileJEmprendedores_Tap" Foreground="#6CDA84" Background="White" FontFamily="/res/Source_Sans_Pro/SourceSansPro-Regular.ttf#Source Sans Pro" >
+                        </toolkit:HubTile>
+                        <toolkit:HubTile Name="tileJOtros" Message="Otros temas de Justicia Cotidiana" Notification="Nuevo testimonio" Source="/imgs/ICONO_JUSTICIA_OTROS.png" Margin="12,12,0,0" Tap="tileJOtros_Tap" Foreground="#6CDA84" Background="White">
                         </toolkit:HubTile>
                     </ListBox>
                     
-                    <Button Grid.Row="1"  Name="btnMapa" Click="btnMapa_Click" Width="300" Height="70" Content="Mapa de Testimonios"></Button>
+                    <Button Grid.Row="1"  Name="btnMapa" Click="btnMapa_Click" Background="#6CDA84" BorderBrush="#6CDA84" Width="300" Height="70" Content="Mapa de Testimonios"  FontFamily="/res/Roboto_Slab/RobotoSlab-Regular.ttf#Roboto Slab" FontSize="20"></Button>
+                    
                 </Grid>                
             </controls:PanoramaItem>
 
             <controls:PanoramaItem>
-                <controls:PanoramaItem.Background>
-                    <ImageBrush ImageSource="/imgs/FONDO_QUE_ES_JC1.png" ></ImageBrush>
-                </controls:PanoramaItem.Background>
-                
                 <controls:PanoramaItem.Header>
-
-
                     <StackPanel>
-                        <TextBlock Foreground="#565656" Text="Propuestas" TextWrapping="Wrap"/>
-                        
+                        <TextBlock Foreground="White" Text="Propuestas" TextWrapping="Wrap" FontSize="30" FontFamily="/res/Roboto_Slab/RobotoSlab-Regular.ttf#Roboto Slab"/>
                     </StackPanel>
                 </controls:PanoramaItem.Header>
-                
-                <Grid>
-                    <TextBlock Text="Es necesario registrarse con facebook para poder ver la propuestas" TextWrapping="Wrap" Foreground="White"></TextBlock>
-                    <Button Name="btnFB" Click="btnFB_Click" Content="Facebook Login"  HorizontalAlignment="Center" Width="200" Height="150"></Button>
-                    <phone:WebBrowser x:Name="webBrowserFB" IsScriptEnabled="True" Navigated="webBrowserFB_Navigated" Loaded="webBrowserFB_Loaded" />
 
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="300"></RowDefinition>
+                        <RowDefinition Height="300"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0"  Source="/imgs/LOGO_MAIN_MENU.png" Width="200" Height="200"></Image>
+                    <TextBlock  FontFamily="/res/Source_Sans_Pro/SourceSansPro-Regular.ttf#Source Sans Pro" Grid.Row="1" Text="A partir del 22 de enero podrás conocer y comentar las propuestas de
+expertos e instituciones para mejorar la justicia cotidiana.          
+                                
+                                Espéralo." TextWrapping="Wrap" Foreground="White" Margin="20,10,20,20" FontSize="25" ></TextBlock>
+                    <!--<Button Name="btnFB" Click="btnFB_Click" Content="Facebook Login"  HorizontalAlignment="Center" Width="200" Height="150"></Button>
+                    <phone:WebBrowser x:Name="webBrowserFB" IsScriptEnabled="True" Navigated="webBrowserFB_Navigated" Loaded="webBrowserFB_Loaded" />-->
+                    
                 </Grid>
                 
-
+                
             </controls:PanoramaItem>
             
         </controls:Panorama>
@@ -300,22 +295,18 @@ ciudadanía y el Estado para resolver problemas y abusos
     </toolkit:TransitionService.NavigationOutTransition>
     <phone:PhoneApplicationPage.ApplicationBar >
         <shell:ApplicationBar>
+            <shell:ApplicationBarIconButton IconUri="/imgs/Engrane49.png" Text="menu" ></shell:ApplicationBarIconButton>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="Acerca de" x:Name="mnuAcerca" Click="mnuAcerca_Click_1">
+                </shell:ApplicationBarMenuItem>
+                
+                <shell:ApplicationBarMenuItem Text="Terminos y condiciones" x:Name="mnuTerminos" Click="mnuTerminos_Click">
+                </shell:ApplicationBarMenuItem>
 
-
-            <!--<shell:ApplicationBarMenuItem Click="mnuAcerca_Click" x:Name="mnuAcerca" Text="Acerca de"></shell:ApplicationBarMenuItem>-->
-
-            <shell:ApplicationBarIconButton 
-            x:Name="iconAcerca1"
-            Click="iconAcerca1_Click" 
-            IconUri="/imgs/LOGOJC_QUE_ES_JC.png"
-            Text="Acerca" />
-
-            <shell:ApplicationBarIconButton 
-                x:Name="iconAcerca2" Click="iconAcerca2_Click" 
+            </shell:ApplicationBar.MenuItems>
             
-                IconUri="/imgs/LOGOJC_QUE_ES_JC.png"
-            Text="Acerca2" />
-            
+
+                        
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
     

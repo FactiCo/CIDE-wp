@@ -20,8 +20,8 @@ namespace CIDE_CotiApp
 {
     public partial class PanoramaPage : PhoneApplicationPage
     {
-        
-        private const string AppId = "3350307419";
+
+        private const string AppId = "654570061331636";
         private const string ExtendedPermissions = "user_about_me,read_stream,publish_stream";
 
         private readonly FacebookClient _fb = new FacebookClient();
@@ -81,10 +81,16 @@ namespace CIDE_CotiApp
             NavigationService.Navigate(new Uri("/ClasTestimonio.xaml?tipo=vecinal", UriKind.Relative));
         }
 
-        private void tileJFuncionarios_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        private void tileJCiudadanos_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/ClasTestimonio.xaml?tipo=funcionarios", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/ClasTestimonio.xaml?tipo=ciudadanos", UriKind.Relative));
         }
+
+        private void tileJOtros_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/ClasTestimonio.xaml?tipo=otros", UriKind.Relative));
+        }
+       
 
         private void tileJEmprendedores_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
@@ -146,7 +152,7 @@ namespace CIDE_CotiApp
                     break;
             }
    
-            imgCurrent.Source = new BitmapImage(new Uri(currURI, UriKind.Relative));
+            //imgCurrent.Source = new BitmapImage(new Uri(currURI, UriKind.Relative));
 
         }
 
@@ -315,7 +321,7 @@ namespace CIDE_CotiApp
         {
             var loginUrl = GetFacebookLoginUrl(AppId, ExtendedPermissions);
 
-            webBrowserFB.Navigate(loginUrl);
+            //webBrowserFB.Navigate(loginUrl);
 
         }
 
@@ -336,6 +342,20 @@ namespace CIDE_CotiApp
 
             return _fb.GetLoginUrl(parameters);
         }
+
+        private void mnuAcerca_Click_1(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Acerca.xaml", UriKind.Relative));
+
+        }
+
+        private void mnuTerminos_Click(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Terminos.xaml", UriKind.Relative));
+
+        }
+
+       
 
     }
 }

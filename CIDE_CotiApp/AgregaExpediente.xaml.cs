@@ -29,7 +29,72 @@ namespace CIDE_CotiApp
             InitializeComponent();
             objExpediente = new Expediente();
             objEndpoint = new ConnectAPI();
+
+            /*</toolkit:ListPickerItem>
+                        <toolkit:ListPickerItem  >Chihuahua</toolkit:ListPickerItem>
+                        <toolkit:ListPickerItem  >Distrito Federal</toolkit:ListPickerItem>
+                        <toolkit:ListPickerItem  >Durango</toolkit:ListPickerItem>
+                        <toolkit:ListPickerItem  >Guanajuato</toolkit:ListPickerItem>
+                        <toolkit:ListPickerItem  >Guerrero</toolkit:ListPickerItem>
+                        <toolkit:ListPickerItem  >Hidalgo</toolkit:ListPickerItem>
+                        <toolkit:ListPickerItem  >Jalisco</toolkit:ListPickerItem>
+                        <toolkit:ListPickerItem  >México</toolkit:ListPickerItem>
+                        <toolkit:ListPickerItem  >Michoacán de Ocampo</toolkit:ListPickerItem>
+                        <toolkit:ListPickerItem  >Morelos</toolkit:ListPickerItem>
+                        <toolkit:ListPickerItem  >Nayarit</toolkit:ListPickerItem>
+                        <toolkit:ListPickerItem  >Nuevo León</toolkit:ListPickerItem>
+                        <toolkit:ListPickerItem  >Oaxaca</toolkit:ListPickerItem>
+                        <toolkit:ListPickerItem  >Puebla*/
+
+            string[] lista = { "Aguascalientes","Baja California","Baja California Sur","Campeche","Coahuila de Zaragoza","Colima","Chiapas" };
+
         }
+
+        string parameterTipo;
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+
+            if (NavigationContext.QueryString.TryGetValue("tipo", out parameterTipo))
+            {
+                decideJusticia(parameterTipo);
+            }
+        }
+
+        string currCategory;
+        private void decideJusticia(string tipo)
+        {
+
+            switch (tipo)
+            {
+                case "trabajo":
+                    currCategory = "Justicia en el trabajo";
+                    txtCategoria.Text = "Justicia en el Trabajo";
+                    break;
+                case "familia":
+                    currCategory = "Justicia en la familia";
+                    txtCategoria.Text = "Justicia en las Familias";
+                    break;
+                case "vecinal":
+                    currCategory = "Justicia vecinal y comunitaria";
+                    txtCategoria.Text = "Justicia Vecinal y Comunitaria";
+                    break;
+                case "ciudadanos":
+                    currCategory = "Justicia para ciudadanos";
+                    txtCategoria.Text = "Justicia para ciudadanos";
+                    break;
+                case "emprendedores":
+                    currCategory = "Justicia para emprendedores";
+                    txtCategoria.Text = "Justicia para emprendedores";
+                    break;
+                case "otros":
+                    currCategory = "Otros temas de Justicia Cotidiana";
+                    txtCategoria.Text = "Otros temas de Justicia Cotidiana";
+                    break;
+            }
+        }
+
+
 
         private async void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
@@ -41,10 +106,10 @@ namespace CIDE_CotiApp
             objTestimonio.email = txtCorreo.Text;
             //objTestimonio.category = txtCategoria.Text;
 
-            objTestimonio.category = "Justicia en las familias";
+            objTestimonio.category = currCategory;
             objTestimonio.explanation = txtExplicacion.Text;
             //objTestimonio.state = lstEntidad.SelectedIndex.ToString();
-            objTestimonio.state = "6";
+            objTestimonio.state = (lstEntidad.SelectedIndex +1 ).ToString();
             objTestimonio.age = (lstEdad.SelectedItem as ListBoxItem).Content.ToString();
             objTestimonio.gender = (lstGenero.SelectedItem as ListBoxItem).Content.ToString();
             objTestimonio.grade = (lstEscolaridad.SelectedItem as ListBoxItem).Content.ToString();
@@ -62,6 +127,7 @@ namespace CIDE_CotiApp
             var sets = new JsonSerializerSettings();
             sets.ContractResolver = new interfaceExpediente(ExpedienteReveiceType.PostNG);
             
+
 
             Book book = new Book
  {
@@ -101,14 +167,14 @@ string startingWithB = JsonConvert.SerializeObject(book, Formatting.Indented,
 
             content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
-            var response = await httpClient.PostAsync("http://www.justiciacotidiana.mx:8080/justiciacotidiana/api/v1/testimonios", content);
+            /*var response = await httpClient.PostAsync("http://www.justiciacotidiana.mx:8080/justiciacotidiana/api/v1/testimonios", content);
 
             var responseString = await response.Content.ReadAsStringAsync();
             var serializer = new JsonSerializer();
 
             
 
-            var values = serializer.Deserialize(new StringReader(responseString),typeof(responseJSON));
+            var values = serializer.Deserialize(new StringReader(responseString),typeof(responseJSON));*/
         }
 
     }

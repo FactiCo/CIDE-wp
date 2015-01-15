@@ -11,72 +11,84 @@
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="False" Foreground="#B0D9BD">
-    
-    
 
     <!--LayoutRoot es la cuadrícula raíz donde se coloca todo el contenido de la página-->
-    <Grid x:Name="LayoutRoot" >
+    <Grid x:Name="LayoutRoot">
+
         <Grid.Background>
-            <ImageBrush ImageSource="/imgs/FONDO_QUE_ES_JC1.png">
-                
+            <ImageBrush ImageSource="/imgs/FONDO_PANORAMA.png">
             </ImageBrush>
         </Grid.Background>
+        
         <Grid.RowDefinitions>
-            <RowDefinition Height="250"/>
+            <RowDefinition Height="140"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-
-        <!--TitlePanel contiene el nombre de la aplicación y el título de la página-->
-        <StackPanel Grid.Row="0" Margin="12,17,0,28" >
-            <TextBlock x:Name="txtJusticia" Text="Justicia Laboral" FontSize="30" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" TextWrapping="Wrap" HorizontalAlignment="Center" />
-            <Image x:Name="imgJusticia" VerticalAlignment="Top" HorizontalAlignment="Center" Width="100" Height="100" Margin="0,20,10,20"></Image>
-        </StackPanel>
-
+        <!--TitlePanel contiene el nombre de la aplicación y el título de la página-->        
+        
+            <Image Grid.Row="0" x:Name="imgJusticia" VerticalAlignment="Top" HorizontalAlignment="Center" Width="100" Height="100" Margin="0,30,10,10" ></Image>
         <!--ContentPanel. Colocar aquí el contenido adicional-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="13,0,11,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" >
                     
                 </RowDefinition>
-                <RowDefinition Height="100" >
+                <RowDefinition Height="70" >
                     
                 </RowDefinition>
+                
                 <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="80"></RowDefinition>
+                
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0" Background="White">
-                <TextBlock  Style="{StaticResource TituloEncabezado_JC}" Name="txtExplicacion" Text="Justicia" TextWrapping="Wrap" Margin="15,10,15,0" ></TextBlock>
+            <Grid Grid.Row="0" Background="White" Name="grdTexto" Tap="grdTexto_Tap">
+                <TextBlock Name="txtJusticia" Text="Justicia" TextWrapping="Wrap" FontFamily="/res/Roboto_Slab/RobotoSlab-Bold.ttf#Roboto Slab" Foreground="Black" Margin="15,10,15,0" />
+                <TextBlock FontSize="15" Name="txtExplicacion" Text="Justicia" TextWrapping="Wrap" Margin="15,40,15,0" Foreground="Black" ></TextBlock>  
             </Grid>
+
+            <Button Grid.Row="1" Margin="0,0,0,0"  Name="btnIngresa" Click="btnIngresa_Click" Background="#6CDA84" BorderBrush="#6CDA84" Width="300" Height="70" Content="Agregar testimonio" Foreground="White" ></Button>
+
+
             
-                <Button Grid.Row="1" Name="btnIngresa" Click="btnIngresa_Click" Background="#6CDA84" Width="350" Height="80" Content="Ingresar mi testimonio" Foreground="White"></Button>
             
-            <ListBox Margin="20" x:Name="lstExp" Grid.Row="2" >
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        
-                            <Grid>
+            <!--<TextBlock Grid.Row="2" Name="txtTestis" Text="Justicia" TextWrapping="Wrap" FontFamily="/res/Roboto_Slab/RobotoSlab-Bold.ttf#Roboto Slab" Foreground="Black" Margin="10,10,10,10" /> -->
+
+                <ListBox x:Name="lstExp" Grid.Row="2" Background="White" Margin="0,10,0,0" >
+
+            <ListBox.ItemTemplate>
+                        <DataTemplate>
+
+                        <Grid  >
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"  ></ColumnDefinition>
-                                <ColumnDefinition  Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="100"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
+
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="50"></RowDefinition>
-                                <RowDefinition Height="100"></RowDefinition>
+                                <RowDefinition Height="50" ></RowDefinition>
+                                <RowDefinition Height="*" ></RowDefinition>
                             </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Path=name}"  />
-                            <Image Grid.Row="1" Name="imgGender" Grid.Column="0" Source="{Binding Path=gender}" >
-                                
+
+                            <Image Grid.Column="0" Grid.Row="1" VerticalAlignment="Center"  Name="imgGender"  Source="{Binding Path=gender}" Width="90" Height="90" >
                             </Image>
-                            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Path=explanation}" />
+                            <StackPanel Grid.Column="1" Grid.Row="0" VerticalAlignment="Bottom">
+                                <TextBlock VerticalAlignment="Center" Text="{Binding Path=name}" Foreground="Black" FontFamily="/res/Roboto_Slab/RobotoSlab-Bold.ttf#Roboto Slab" FontSize="15" TextWrapping="Wrap"/>
+                            </StackPanel>
+                            <StackPanel Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" >
+                            <TextBlock  TextWrapping="Wrap"  Text="{Binding Path=explanation}" FontFamily="/res/Source_Sans_Pro/SourceSansPro-Regular.ttf#Source Sans Pro" Foreground="Black" Margin="5,5,5,5"  />
+                              
+                            </StackPanel>
+                            <Rectangle Fill="#6CDA84" Grid.Column="1" Height="1" HorizontalAlignment="Stretch" />
                         </Grid>
-                            
-                        
                     </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-
-            <Button Grid.Row="3" Name="btnVer" Click="btnVer_Click" Background="#6CDA84" Width="350" Height="80" Content="Ver Testimonios" Foreground="White"></Button>
-
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            
+            <RichTextBox Grid.Row="2" Name="rtbRecientes" Background="White" Margin="0,20,0,20" Visibility="Collapsed">
+                    <Paragraph FontFamily="/res/Roboto_Slab/RobotoSlab-Bold.ttf#Roboto Slab" Foreground="Black" >Testimonios recientes</Paragraph>
+                    <Paragraph FontFamily="/res/Source_Sans_Pro/SourceSansPro-Regular.ttf#Source Sans Pro" Foreground="Black" >   Sin testimonios en esta categoria</Paragraph >
+                </RichTextBox>
+            <Button Grid.Row="3" Name="btnVer" Click="btnVer_Click" Background="#6CDA84" FontFamily="/res/Roboto_Slab/RobotoSlab-Regular.ttf#Roboto Slab" Width="350" Height="80" Content="Ver Testimonios" Foreground="White" BorderBrush="#6CDA84"></Button>
         </Grid>
     </Grid>
 

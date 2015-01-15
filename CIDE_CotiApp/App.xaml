@@ -11,7 +11,10 @@
         <Style x:Key="TituloEncabezado_JC" TargetType="TextBlock">
             <Setter Property="Foreground" Value="#565656"/>
         </Style>
+        
     </Application.Resources>
+
+    
 
 
     <Application.ApplicationLifetimeObjects>

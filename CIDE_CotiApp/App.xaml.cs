@@ -26,6 +26,7 @@ namespace CIDE_CotiApp
         /// <summary>
         /// Constructor para el objeto Application.
         /// </summary>
+
         public App()
         {
             //RootFrame = new Microsoft.Phone.Controls.TransitionFrame();

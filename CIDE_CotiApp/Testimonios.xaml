@@ -11,39 +11,63 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="False">
 
     <!--LayoutRoot es la cuadrícula raíz donde se coloca todo el contenido de la página-->
     <Grid x:Name="LayoutRoot"  >
+        <Grid.Background>
+            <ImageBrush ImageSource="/imgs/FONDO_PANORAMA.png">
+                
+            </ImageBrush>
+            
+        </Grid.Background>
         <Grid.RowDefinitions>
-            <RowDefinition Height="150">
+            <RowDefinition Height="100">
             </RowDefinition>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <!--TitlePanel contiene el nombre de la aplicación y el título de la página-->
-        <StackPanel Grid.Row="0" Margin="0,0,0,0"  >
-            <Image Source="/imgs/FONDO_QUE_ES_JC1.png"></Image>    
+        <StackPanel Grid.Row="0" Margin="20,5,0,0"  >
+            <TextBlock Foreground="White" Text="Testimonios recientes" TextWrapping="Wrap" FontSize="30" FontFamily="/res/Roboto_Slab/RobotoSlab-Regular.ttf#Roboto Slab"/>
         </StackPanel>
 
         <!--ContentPanel. Colocar aquí el contenido adicional-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" ></RowDefinition>
             </Grid.RowDefinitions>
-            
 
-            <ListBox x:Name="lstTestimonios" Grid.Row="1">
+            <ListBox x:Name="lstTestimonios" Grid.Row="1" Margin="10,10,10,10" Background="White">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel >
-                            <TextBlock FontSize="{StaticResource PhoneFontSizeExtraLarge}" Text="{Binding name}" Foreground="#666666" />
-                            <TextBlock Text="{Binding explanation}" Foreground="#666666" TextWrapping="Wrap" />
-                            <TextBlock Text="{Binding email}" Foreground="#666666"  TextWrapping="Wrap"/>
-                            <TextBlock Text="{Binding state}" Foreground="#666666"  TextWrapping="Wrap" />
-                        </StackPanel>
+
+                        <Grid  >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60" ></RowDefinition>
+                                <RowDefinition Height="*" ></RowDefinition>
+                            </Grid.RowDefinitions>
+
+                            <Image Grid.Column="0" Grid.Row="1" VerticalAlignment="Center"  Name="imgGender"  Source="{Binding Path=gender}" Width="90" Height="90" >
+                            </Image>
+                            <StackPanel Grid.Column="1" Grid.Row="0" VerticalAlignment="Bottom">
+                                <TextBlock VerticalAlignment="Center" Text="{Binding Path=name}" Foreground="Black" FontFamily="/res/Roboto_Slab/RobotoSlab-Bold.ttf#Roboto Slab" FontSize="15" TextWrapping="Wrap"/>
+                            </StackPanel>
+                            <StackPanel Grid.Column="1" Grid.Row="1" VerticalAlignment="Center">
+                                <TextBlock  TextWrapping="Wrap"  Text="{Binding Path=explanation}" FontFamily="/res/Source_Sans_Pro/SourceSansPro-Regular.ttf#Source Sans Pro" Foreground="Black" />
+
+                            
+                                
+                            </StackPanel>
+                            <Rectangle Fill="#6CDA84" Grid.Column="1" Height="1" HorizontalAlignment="Stretch" />
+                        </Grid>
+                        
                     </DataTemplate>
                 </ListBox.ItemTemplate>    
             </ListBox>

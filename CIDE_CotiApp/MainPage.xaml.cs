@@ -20,5 +20,10 @@ namespace CIDE_CotiApp
         {
             InitializeComponent();
         }
+
+        private void gridMain_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/PanoramaPage.xaml", UriKind.Relative));
+        }
     }
 }

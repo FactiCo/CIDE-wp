@@ -98,11 +98,17 @@
     <Reference Include="mscorlib.extensions" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Acerca.xaml.cs">
+      <DependentUpon>Acerca.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AgregaExpediente.xaml.cs">
       <DependentUpon>AgregaExpediente.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CatDesc.xaml.cs">
+      <DependentUpon>CatDesc.xaml</DependentUpon>
     </Compile>
     <Compile Include="ClasTestimonio.xaml.cs">
       <DependentUpon>ClasTestimonio.xaml</DependentUpon>
@@ -124,8 +130,14 @@
       <DependentUpon>PanoramaPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Propuesta.xaml.cs">
+      <DependentUpon>Propuesta.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SplashWP.xaml.cs">
       <DependentUpon>SplashWP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Terminos.xaml.cs">
+      <DependentUpon>Terminos.xaml</DependentUpon>
     </Compile>
     <Compile Include="Testimonios.xaml.cs">
       <DependentUpon>Testimonios.xaml</DependentUpon>
@@ -139,7 +151,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="Acerca.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AgregaExpediente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CatDesc.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -163,7 +183,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Propuesta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SplashWP.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Terminos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -180,6 +208,69 @@
     <None Include="packages.config" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml" />
+    <None Include="res\Roboto_Slab\.DS_Store" />
+    <Content Include="imgs\Engrane49.png" />
+    <Content Include="imgs\FONDO_PANORAMA.png" />
+    <Content Include="imgs\ICONO_JUSTICIA_CIUDADANOS_TRANS.png" />
+    <Content Include="imgs\ICONO_JUSTICIA_EMPRENDEDORES_TRANS.png" />
+    <Content Include="imgs\ICONO_JUSTICIA_FAMILIA_TRANS.png" />
+    <Content Include="imgs\ICONO_JUSTICIA_OTROS_TRANS.png" />
+    <Content Include="imgs\ICONO_JUSTICIA_TRABAJO_TRANS.png" />
+    <Content Include="imgs\ICONO_JUSTICIA_VECINAL_TRANS.png" />
+    <Content Include="imgs\ICONSBAR.png" />
+    <Content Include="imgs\INFOGRAFIA_4.png" />
+    <Content Include="imgs\LOGOBAR.png" />
+    <Content Include="imgs\Main_img.png" />
+    <Content Include="imgs\SLIDE_NUEVO.png" />
+    <Content Include="res\Roboto_Slab\RobotoSlab-Bold.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="res\Roboto_Slab\RobotoSlab-Light.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="res\Roboto_Slab\RobotoSlab-Regular.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="res\Roboto_Slab\RobotoSlab-Thin.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="res\Source_Sans_Pro\.DS_Store" />
+    <Content Include="res\Source_Sans_Pro\SourceSansPro-Black.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="res\Source_Sans_Pro\SourceSansPro-BlackItalic.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="res\Source_Sans_Pro\SourceSansPro-Bold.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="res\Source_Sans_Pro\SourceSansPro-BoldItalic.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="res\Source_Sans_Pro\SourceSansPro-ExtraLight.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="res\Source_Sans_Pro\SourceSansPro-ExtraLightItalic.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="res\Source_Sans_Pro\SourceSansPro-Italic.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="res\Source_Sans_Pro\SourceSansPro-Light.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="res\Source_Sans_Pro\SourceSansPro-LightItalic.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="res\Source_Sans_Pro\SourceSansPro-Regular.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="res\Source_Sans_Pro\SourceSansPro-Semibold.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="res\Source_Sans_Pro\SourceSansPro-SemiboldItalic.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="ApplicationIcon.png">
@@ -196,9 +287,11 @@
     <Content Include="imgs\FONDO_QUE_ES_JC3.png" />
     <Content Include="imgs\FONDO_QUE_ES_JC4.png" />
     <Content Include="imgs\ICONO_HOMBRE.png" />
+    <Content Include="imgs\ICONO_JUSTICIA_CIUDADANOS.png" />
     <Content Include="imgs\ICONO_JUSTICIA_EMPRENDEDORES.png" />
     <Content Include="imgs\ICONO_JUSTICIA_FAMILIA.png" />
     <Content Include="imgs\ICONO_JUSTICIA_FUNCIONARIOS.png" />
+    <Content Include="imgs\ICONO_JUSTICIA_OTROS.png" />
     <Content Include="imgs\ICONO_JUSTICIA_TRABAJO.png" />
     <Content Include="imgs\ICONO_JUSTICIA_VECINAL.png" />
     <Content Include="imgs\ICONO_MUJER.png" />
@@ -208,8 +301,14 @@
     <Content Include="imgs\LOGOJC_QUE_ES_JC.png" />
     <Content Include="imgs\LOGOJC_SPLASH.png" />
     <Content Include="imgs\LOGO_MAIN_MENU.png" />
+    <Content Include="imgs\NEW_LOGO.png" />
+    <Content Include="imgs\QUE_ES_JC_1.png" />
+    <Content Include="imgs\QUE_ES_JC_2.png" />
+    <Content Include="imgs\QUE_ES_JC_3.png" />
     <Content Include="LogoNew.png" />
     <Content Include="README_FIRST.txt" />
+    <Content Include="res\Roboto_Slab\LICENSE.txt" />
+    <Content Include="res\Source_Sans_Pro\OFL.txt" />
     <Content Include="SplashScreenImage.jpg" />
     <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
