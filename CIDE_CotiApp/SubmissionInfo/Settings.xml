@@ -1,7 +1,6 @@
 <MarketplaceDetails>
-  <SmallAppTile>
-  </SmallAppTile>
-  <ScreenShots>;;;;;;;;</ScreenShots>
-  <ScreenShotsWXGA>;;;;;;;;</ScreenShotsWXGA>
-  <ScreenShots720P>;;;;;;;;</ScreenShots720P>
+  <SmallAppTile>JC300.png</SmallAppTile>
+  <ScreenShots>WVGA_1.png;WVGA_2.png;;;;;;;</ScreenShots>
+  <ScreenShotsWXGA>WXGA_1.png;;;;;;;;</ScreenShotsWXGA>
+  <ScreenShots720P>wp_ss_20141025_0002.png;wp_ss_20141025_0003.png;wp_ss_20141025_0004.png;wp_ss_20141025_0005.png;wp_ss_20141025_0006.png;;;;</ScreenShots720P>
 </MarketplaceDetails>
