@@ -74,19 +74,19 @@
                             <RowDefinition Height="30" ></RowDefinition>
                             <RowDefinition Height="150" ></RowDefinition>
                             <RowDefinition Height="30" ></RowDefinition>
-                            <RowDefinition Height="140" ></RowDefinition>
+                            <RowDefinition Height="300" ></RowDefinition>
 
 
                         </Grid.RowDefinitions>
 
-                        <TextBlock FontFamily="/res/Roboto_Slab/RobotoSlab-Regular.ttf#Roboto Slab" Grid.Row="0" HorizontalAlignment="Left"  Name="blckNombre" Text="Nombre" VerticalAlignment="Top" Foreground="Black" FontWeight="Normal" FontFamily="Verdana" FontSize="24"  />
+                        <TextBlock FontFamily="/res/Roboto_Slab/RobotoSlab-Regular.ttf#Roboto Slab" Grid.Row="0" HorizontalAlignment="Left"  Name="blckNombre" Text="Nombre" VerticalAlignment="Top" Foreground="Black" FontWeight="Normal"  FontSize="24"  />
                         <TextBox Grid.Row="1" HorizontalAlignment="Left" Name="txtNombre" Text="" VerticalAlignment="Top" Width="422" />
-                        <TextBlock FontFamily="/res/Roboto_Slab/RobotoSlab-Regular.ttf#Roboto Slab" Grid.Row="2" HorizontalAlignment="Left"  Name="blckCorreo" Text="Correo" VerticalAlignment="Top" Foreground="Black" FontWeight="Normal" FontFamily="Verdana" FontSize="24" />
+                        <TextBlock FontFamily="/res/Roboto_Slab/RobotoSlab-Regular.ttf#Roboto Slab" Grid.Row="2" HorizontalAlignment="Left"  Name="blckCorreo" Text="Correo" VerticalAlignment="Top" Foreground="Black" FontWeight="Normal" FontSize="24" />
                         <TextBox Grid.Row="3" HorizontalAlignment="Left" Name="txtCorreo" Text="" VerticalAlignment="Top" Width="422" />
 
 
 
-                        <TextBlock FontFamily="/res/Roboto_Slab/RobotoSlab-Regular.ttf#Roboto Slab" Grid.Row="4" HorizontalAlignment="Left"  Name="blckEdad" Text="Edad" VerticalAlignment="Top" Foreground="Black" FontWeight="Normal" FontFamily="Verdana" FontSize="24" />
+                        <TextBlock FontFamily="/res/Roboto_Slab/RobotoSlab-Regular.ttf#Roboto Slab" Grid.Row="4" HorizontalAlignment="Left"  Name="blckEdad" Text="Edad" VerticalAlignment="Top" Foreground="Black" FontWeight="Normal" FontSize="24" />
 
                         <ListBox Grid.Row="5" HorizontalAlignment="Left" Name="lstEdad" VerticalAlignment="Top" Width="422" Foreground="Gray">
                             <ListBoxItem  >Menos de 18 años</ListBoxItem>
@@ -104,14 +104,14 @@
                         </ListBox>
 
 
-                        <TextBlock FontFamily="/res/Roboto_Slab/RobotoSlab-Regular.ttf#Roboto Slab" Grid.Row="6" HorizontalAlignment="Left"  Name="blckGenero" Text="Genero" VerticalAlignment="Top" Foreground="Black" FontWeight="Normal" FontFamily="Verdana" FontSize="24" />
+                        <TextBlock FontFamily="/res/Roboto_Slab/RobotoSlab-Regular.ttf#Roboto Slab" Grid.Row="6" HorizontalAlignment="Left"  Name="blckGenero" Text="Genero" VerticalAlignment="Top" Foreground="Black" FontWeight="Normal"  FontSize="24" />
                         <ListBox Grid.Row="7" HorizontalAlignment="Left" Name="lstGenero" VerticalAlignment="Top" Width="422" Foreground="Gray">
                             <ListBoxItem Name="Hombre" >Hombre</ListBoxItem>
                             <ListBoxItem Name="Mujer" >Mujer</ListBoxItem>
                             <ListBoxItem Name="NA" >Sin Especificar</ListBoxItem>
                         </ListBox>
 
-                        <TextBlock FontFamily="/res/Roboto_Slab/RobotoSlab-Regular.ttf#Roboto Slab" Grid.Row="8" HorizontalAlignment="Left"  Name="blckEscolaridad" Text="Escolaridad" VerticalAlignment="Top" Foreground="Black" FontWeight="Normal" FontFamily="Verdana" FontSize="24" />
+                        <TextBlock FontFamily="/res/Roboto_Slab/RobotoSlab-Regular.ttf#Roboto Slab" Grid.Row="8" HorizontalAlignment="Left"  Name="blckEscolaridad" Text="Escolaridad" VerticalAlignment="Top" Foreground="Black" FontWeight="Normal"  FontSize="24" />
 
                         <ListBox Grid.Row="9" HorizontalAlignment="Left" Name="lstEscolaridad" VerticalAlignment="Top" Width="422" Foreground="Gray">
                             <ListBoxItem >Sin estudios</ListBoxItem>
@@ -127,13 +127,12 @@
 
 
 
-                        <TextBlock FontFamily="/res/Roboto_Slab/RobotoSlab-Regular.ttf#Roboto Slab" Grid.Row="10" HorizontalAlignment="Left"  Name="blckCategoria" Text="Categoria" VerticalAlignment="Top" Foreground="Black" FontWeight="Normal" FontFamily="Verdana" FontSize="24" />
+                        <TextBlock FontFamily="/res/Roboto_Slab/RobotoSlab-Regular.ttf#Roboto Slab" Grid.Row="10" HorizontalAlignment="Left"  Name="blckCategoria" Text="Categoria" VerticalAlignment="Top" Foreground="Black" FontWeight="Normal"  FontSize="24" />
                         <TextBox Grid.Row="11" HorizontalAlignment="Left" Name="txtCategoria" Text="" VerticalAlignment="Top" Width="422" IsReadOnly="True" />
 
-                        <TextBlock FontFamily="/res/Roboto_Slab/RobotoSlab-Regular.ttf#Roboto Slab" Grid.Row="12" HorizontalAlignment="Left"  Name="blckEntidad" Text="Entidad" VerticalAlignment="Top" Foreground="Black" FontWeight="Normal" FontFamily="Verdana" FontSize="24" />
+                        <TextBlock FontFamily="/res/Roboto_Slab/RobotoSlab-Regular.ttf#Roboto Slab" Grid.Row="12" HorizontalAlignment="Left"  Name="blckEntidad" Text="Entidad" VerticalAlignment="Top" Foreground="Black" FontWeight="Normal" FontSize="24" />
 
                         <ListBox Grid.Row="13" HorizontalAlignment="Left" Name="lstEntidad" VerticalAlignment="Top" Width="422" Foreground="Gray">
-
 
                             <ListBoxItem  x:Uid="1">Aguascalientes</ListBoxItem>
                             <ListBoxItem  x:Uid="2">Baja California</ListBoxItem>
@@ -169,10 +168,8 @@
                             <ListBoxItem   x:Uid="32">Zacatecas</ListBoxItem>
                         </ListBox>
 
-                        <TextBlock Grid.Row="14" HorizontalAlignment="Left"  Name="blckExplicacion" Text="Explicacion" VerticalAlignment="Top" Foreground="Black" FontWeight="Normal" FontFamily="Verdana" FontSize="24" />
-                        <TextBox Grid.Row="15" HorizontalAlignment="Left" Name="txtExplicacion" Text="" VerticalAlignment="Top" Width="422" AcceptsReturn="True" MaxHeight="200" />
-
-
+                        <TextBlock FontFamily="/res/Roboto_Slab/RobotoSlab-Regular.ttf#Roboto Slab" Grid.Row="14" HorizontalAlignment="Left"  Name="blckExplicacion" Text="Explicacion" VerticalAlignment="Top" Foreground="Black" FontWeight="Normal" FontSize="24" />
+                        <TextBox Grid.Row="15" HorizontalAlignment="Left" Name="txtExplicacion"  Width="422" AcceptsReturn="True" MaxHeight="300" TextWrapping="Wrap" />
 
                     </Grid>
 

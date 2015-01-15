@@ -15,6 +15,8 @@ using Newtonsoft.Json;
 using System.IO;
 using System.Text;
 using System.Net.Mime;
+using System.Windows.Controls.Primitives;
+using Microsoft.Phone.Tasks;
 
 namespace CIDE_CotiApp
 {
@@ -166,15 +168,51 @@ string startingWithB = JsonConvert.SerializeObject(book, Formatting.Indented,
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
             content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-
-            /*var response = await httpClient.PostAsync("http://www.justiciacotidiana.mx:8080/justiciacotidiana/api/v1/testimonios", content);
+            
+            var response = await httpClient.PostAsync("http://www.justiciacotidiana.mx:8080/justiciacotidiana/api/v1/testimonios", content);
 
             var responseString = await response.Content.ReadAsStringAsync();
             var serializer = new JsonSerializer();
 
-            
+            Popup popup = new Popup();
+            popup.Height = 300;
+            popup.Width = 400;
+            popup.VerticalOffset = 100;
+            popup.HorizontalAlignment = HorizontalAlignment.Center;
+            wpcPopup control = new wpcPopup();
+            popup.Child = control;
+            popup.IsOpen = true;
 
-            var values = serializer.Deserialize(new StringReader(responseString),typeof(responseJSON));*/
+
+            var values = serializer.Deserialize(new StringReader(responseString),typeof(responseJSON));
+
+            control.btnOK.Click += (s, args) =>
+            {
+
+                if (this.NavigationService.CanGoBack)
+                {
+                    popup.IsOpen = false;
+                    this.NavigationService.GoBack();
+                }
+
+            };
+
+            control.btnCompartir.Click += (s, args) =>
+            {
+                if (this.NavigationService.CanGoBack)
+                {
+                    ShareStatusTask shareStatusTask = new ShareStatusTask();
+
+                    shareStatusTask.Status = "He enviado un testimonio sobre #JusticiaCotidiana desde www.justiciacotidiana.mx @JusCotidiana";
+                    shareStatusTask.Show();
+                    popup.IsOpen = false;
+
+                    this.NavigationService.GoBack();
+
+                }
+
+            };
+
         }
 
     }
