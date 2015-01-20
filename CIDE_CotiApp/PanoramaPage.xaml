@@ -258,12 +258,27 @@ ciudadanía y el Estado para resolver problemas y abusos
                         <RowDefinition Height="300"></RowDefinition>
                     </Grid.RowDefinitions>
                     <Image Grid.Row="0"  Source="/imgs/LOGO_MAIN_MENU.png" Width="200" Height="200"></Image>
-                    <TextBlock  FontFamily="/res/Source_Sans_Pro/SourceSansPro-Regular.ttf#Source Sans Pro" Grid.Row="1" Text="A partir del 22 de enero podrás conocer y comentar las propuestas de
-expertos e instituciones para mejorar la justicia cotidiana.          
-                                
-                                Espéralo." TextWrapping="Wrap" Foreground="White" Margin="20,10,20,20" FontSize="25" ></TextBlock>
-                    <!--<Button Name="btnFB" Click="btnFB_Click" Content="Facebook Login"  HorizontalAlignment="Center" Width="200" Height="150"></Button>
-                    <phone:WebBrowser x:Name="webBrowserFB" IsScriptEnabled="True" Navigated="webBrowserFB_Navigated" Loaded="webBrowserFB_Loaded" />-->
+
+                    <StackPanel Name="stkPropuestas" Visibility="Collapsed">
+                        <controls:Pivot>
+                            <controls:Pivot.ItemTemplate>
+                                <DataTemplate>
+                                    <controls:Pivot Name="{Binding Path=category}">  
+                                        
+                                    </controls:Pivot>
+                                </DataTemplate>
+                            </controls:Pivot.ItemTemplate>
+                        </controls:Pivot>
+                    </StackPanel>
+                    
+                    
+                    <Button Name="btnFB" Click="btnFB_Click" Content="Facebook Login"  HorizontalAlignment="Center" Width="200" Height="150"></Button>
+                    <phone:WebBrowser x:Name="webBrowserFB" IsScriptEnabled="True" Navigated="webBrowserFB_Navigated" Loaded="webBrowserFB_Loaded" />
+                    
+                    
+                    
+                    
+                    
                     
                 </Grid>
                 
@@ -293,6 +308,7 @@ expertos e instituciones para mejorar la justicia cotidiana.
             </toolkit:NavigationOutTransition.Forward>
         </toolkit:NavigationOutTransition>
     </toolkit:TransitionService.NavigationOutTransition>
+    
     <phone:PhoneApplicationPage.ApplicationBar >
         <shell:ApplicationBar>
             <shell:ApplicationBarIconButton IconUri="/imgs/Engrane49.png" Text="menu" ></shell:ApplicationBarIconButton>

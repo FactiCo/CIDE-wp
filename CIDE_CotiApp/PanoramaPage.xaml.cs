@@ -26,9 +26,6 @@ namespace CIDE_CotiApp
 
         private readonly FacebookClient _fb = new FacebookClient();
 
-
-
-
         private Popup popup;
         public PanoramaPage()
         {
@@ -311,7 +308,9 @@ namespace CIDE_CotiApp
 
                 var url = string.Format("/Pages/FacebookInfoPage.xaml?access_token={0}&id={1}", accessToken, id);
 
-                Dispatcher.BeginInvoke(() => NavigationService.Navigate(new Uri(url, UriKind.Relative)));
+
+
+                //Dispatcher.BeginInvoke(() => NavigationService.Navigate(new Uri(url, UriKind.Relative)));
             };
 
             fb.GetAsync("me?fields=id");
@@ -321,7 +320,7 @@ namespace CIDE_CotiApp
         {
             var loginUrl = GetFacebookLoginUrl(AppId, ExtendedPermissions);
 
-            //webBrowserFB.Navigate(loginUrl);
+            webBrowserFB.Navigate(loginUrl);
 
         }
 
@@ -329,7 +328,10 @@ namespace CIDE_CotiApp
         {
             var parameters = new Dictionary<string, object>();
             parameters["client_id"] = appId;
-            parameters["redirect_uri"] = "https://www.facebook.com/connect/login_success.html";
+            //parameters["redirect_uri"] = "https://www.facebook.com/connect/login_success.html";
+            parameters["redirect_uri"] = "https://m.facebook.com/dialog/return/ms";
+
+        
             parameters["response_type"] = "token";
             parameters["display"] = "touch";
 
@@ -354,8 +356,6 @@ namespace CIDE_CotiApp
             NavigationService.Navigate(new Uri("/Terminos.xaml", UriKind.Relative));
 
         }
-
-       
 
     }
 }

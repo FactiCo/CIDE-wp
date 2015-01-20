@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2009/deployment" AppPlatformVersion="7.1">
-  <App xmlns="" ProductID="{4987c17c-311f-4a08-a561-888b6aec72b8}" Title="Justicia Cotidiana" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Mario Jimenez" Description="Primera aplicación para recopilar y visualizar testimonios y propuestas de Justicia Cotidiana en México" Publisher="CIDE_CotiApp">
+  <App xmlns="" ProductID="{399d99ba-0689-4d4b-8136-e749e7c25266}" Title="Justicia Cotidiana" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Mario Jimenez" Description="Primera aplicación para recopilar y visualizar testimonios y propuestas de Justicia Cotidiana en México" Publisher="CIDE_CotiApp">
     <IconPath IsRelative="true" IsResource="false">imgs\NEW_LOGO.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_IDENTITY_DEVICE" />
