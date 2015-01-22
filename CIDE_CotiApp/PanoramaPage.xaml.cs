@@ -14,7 +14,6 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using System.Windows.Controls.Primitives;
 using Microsoft.Phone.Tasks;
-using Facebook;
 
 namespace CIDE_CotiApp
 {
@@ -24,7 +23,7 @@ namespace CIDE_CotiApp
         private const string AppId = "654570061331636";
         private const string ExtendedPermissions = "user_about_me,read_stream,publish_stream";
 
-        private readonly FacebookClient _fb = new FacebookClient();
+       // private readonly FacebookClient _fb = new FacebookClient();
 
         private Popup popup;
         public PanoramaPage()
@@ -272,7 +271,7 @@ namespace CIDE_CotiApp
 
         private void webBrowserFB_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
         {
-            FacebookOAuthResult oauthResult;
+           /* FacebookOAuthResult oauthResult;
             if (!_fb.TryParseOAuthCallbackUrl(e.Uri, out oauthResult))
             {
                 return;
@@ -287,11 +286,11 @@ namespace CIDE_CotiApp
             {
                 // user cancelled
                 MessageBox.Show(oauthResult.ErrorDescription);
-            }
+            }*/
 
         }
 
-        private void LoginSucceded(string accessToken)
+       /* private void LoginSucceded(string accessToken)
         {
             var fb = new FacebookClient(accessToken);
 
@@ -314,17 +313,17 @@ namespace CIDE_CotiApp
             };
 
             fb.GetAsync("me?fields=id");
-        }
+        }*/
 
         private void webBrowserFB_Loaded(object sender, RoutedEventArgs e)
         {
-            var loginUrl = GetFacebookLoginUrl(AppId, ExtendedPermissions);
+            /*var loginUrl = GetFacebookLoginUrl(AppId, ExtendedPermissions);
 
-            webBrowserFB.Navigate(loginUrl);
+            webBrowserFB.Navigate(loginUrl);*/
 
         }
 
-        private Uri GetFacebookLoginUrl(string appId, string extendedPermissions)
+        /*private Uri GetFacebookLoginUrl(string appId, string extendedPermissions)
         {
             var parameters = new Dictionary<string, object>();
             parameters["client_id"] = appId;
@@ -343,7 +342,7 @@ namespace CIDE_CotiApp
             }
 
             return _fb.GetLoginUrl(parameters);
-        }
+        }*/
 
         private void mnuAcerca_Click_1(object sender, EventArgs e)
         {
